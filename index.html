@@ -6,7 +6,7 @@
 
   <title>Rosanna & Gerardo - Matrimonio</title>
 
-  <link rel="stylesheet" href="style.css?v=12">
+  <link rel="stylesheet" href="style.css?v=13">
 </head>
 
 <body>
@@ -16,6 +16,8 @@
       <div class="envelope-flap"></div>
 
       <div class="envelope-content">
+        <img src="images/logo.png" alt="Logo Rosanna e Gerardo" class="invitation-logo">
+
         <p class="invitation-small">Sei invitato al matrimonio di</p>
         <h2>Rosanna & Gerardo</h2>
         <p class="invitation-date">3 Gennaio 2027</p>
@@ -35,6 +37,8 @@
 
   <header id="home">
     <div class="hero">
+      <img src="images/logo.png" alt="Logo Rosanna e Gerardo" class="hero-logo">
+
       <p class="eyebrow">Ci sposiamo</p>
       <h1>Rosanna & Gerardo</h1>
       <p class="date">3 Gennaio 2027 · Puglianello (BN)</p>
@@ -46,14 +50,14 @@
   </header>
 
   <nav>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#dettagli">Dettagli</a></li>
-    <li><a href="location.html">Location</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#rsvp">RSVP</a></li>
-  </ul>
-</nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#dettagli">Dettagli</a></li>
+      <li><a href="location/">Location</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#rsvp">RSVP</a></li>
+    </ul>
+  </nav>
 
   <section id="storia">
     <h2>La nostra storia</h2>
@@ -162,12 +166,7 @@
     <h2>Conferma la tua presenza</h2>
 
     <form id="rsvp-form">
-      <input
-        type="text"
-        name="nome"
-        placeholder="Nome e cognome"
-        required
-      >
+      <input type="text" name="nome" placeholder="Nome e cognome" required>
 
       <select name="partecipazione" required>
         <option value="">Parteciperai?</option>
@@ -175,16 +174,9 @@
         <option value="No">No</option>
       </select>
 
-      <input
-        type="number"
-        name="numero_invitati"
-        placeholder="Numero invitati"
-      >
+      <input type="number" name="numero_invitati" placeholder="Numero invitati">
 
-      <textarea
-        name="messaggio"
-        placeholder="Messaggio o allergie"
-      ></textarea>
+      <textarea name="messaggio" placeholder="Messaggio o allergie"></textarea>
 
       <button type="submit">
         Invia conferma
@@ -195,10 +187,11 @@
   </section>
 
   <footer>
+    <img src="images/logo.png" alt="Logo Rosanna e Gerardo" class="footer-logo">
     <p>Con amore, Rosanna & Gerardo</p>
   </footer>
 
-  <script src="script.js?v=12"></script>
+  <script src="script.js?v=13"></script>
 
 </body>
 </html>

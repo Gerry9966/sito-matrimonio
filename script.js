@@ -65,17 +65,22 @@ if (form && message) {
 }
 
 
-/* APERTURA INVITO + MUSICA */
+/* APERTURA INVITO */
 
 const invitationScreen = document.getElementById("invitation-screen");
 const openInvitationButton = document.getElementById("open-invitation");
 
+const invitationAlreadyOpened = localStorage.getItem("invitationOpened");
+
+if (invitationAlreadyOpened === "true" && invitationScreen) {
+  invitationScreen.classList.add("hidden");
+}
 
 if (openInvitationButton && invitationScreen) {
   openInvitationButton.addEventListener("click", function () {
     invitationScreen.classList.add("opening");
 
-
+    localStorage.setItem("invitationOpened", "true");
 
     setTimeout(function () {
       invitationScreen.classList.add("hidden");

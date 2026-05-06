@@ -65,3 +65,21 @@ form.addEventListener("submit",function(event){
   form.reset();
 
 });
+
+/* APERTURA INVITO + MUSICA */
+
+const invitationScreen = document.getElementById("invitation-screen");
+const openInvitationButton = document.getElementById("open-invitation");
+const weddingMusic = document.getElementById("wedding-music");
+
+openInvitationButton.addEventListener("click", function () {
+  invitationScreen.classList.add("opening");
+
+  weddingMusic.play().catch(function () {
+    console.log("Musica bloccata dal browser");
+  });
+
+  setTimeout(function () {
+    invitationScreen.classList.add("hidden");
+  }, 900);
+});

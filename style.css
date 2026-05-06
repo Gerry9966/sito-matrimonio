@@ -23,14 +23,21 @@ header{
   text-align:center;
   padding:40px 20px;
   color:white;
+}
+
+.homepage-hero{
   background:
-    linear-gradient(rgba(18,43,30,.65),rgba(120,20,20,.65)),
-    url("images/viale.png")
-    center/cover;
+    linear-gradient(rgba(18,43,30,.12),rgba(80,20,20,.12)),
+    url("images/homepage.png")
+    center/cover no-repeat;
 }
 
 .hero{
   max-width:850px;
+}
+
+.hero-empty{
+  min-height:70vh;
 }
 
 .eyebrow{
@@ -396,7 +403,7 @@ footer{
   background:
     linear-gradient(rgba(20, 20, 15, .55), rgba(70, 25, 15, .55)),
     url("images/viale.png")
-    center/cover;
+    center/cover no-repeat;
   position: relative;
 }
 
@@ -572,7 +579,7 @@ button:hover,
 .button,
 button,
 .map-button {
-  transition: .25s ease;
+  transition:.25s ease;
 }
 
 @media(max-width:700px) {

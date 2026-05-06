@@ -25,13 +25,16 @@ header{
   color:white;
 }
 
+/* HOMEPAGE HERO */
+
 .homepage-hero{
   position:relative;
   overflow:hidden;
   background:
-    linear-gradient(rgba(18,43,30,.34),rgba(80,20,20,.38)),
+    linear-gradient(rgba(18,43,30,.48),rgba(80,20,20,.52)),
     url("images/background-homepage.png")
-    center/cover no-repeat;
+    center center/contain no-repeat;
+  background-color:#120f0d;
 }
 
 .hero{
@@ -40,51 +43,55 @@ header{
 
 .hero-homepage{
   width:100%;
-  max-width:1150px;
-  min-height:82vh;
+  max-width:920px;
+  min-height:76vh;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:40px 20px;
+  padding:30px 20px;
   position:relative;
   z-index:2;
 }
 
 .homepage-logo{
-  width:300px;
-  max-width:72vw;
+  width:210px;
+  max-width:54vw;
   height:auto;
-  margin-bottom:34px;
-  filter:drop-shadow(0 0 18px rgba(212,175,55,.42));
+  margin-bottom:26px;
+  filter:drop-shadow(0 0 14px rgba(212,175,55,.38));
   animation:fadeInLogo 1.4s ease both;
 }
 
 .homepage-title{
-  font-size:clamp(48px,7vw,96px);
-  font-weight:400;
-  line-height:1.05;
-  color:#f7dfac;
+  font-family:'Cormorant Garamond', Georgia, serif;
+  font-size:clamp(38px,5vw,72px);
   font-style:italic;
-  text-shadow:0 5px 24px rgba(0,0,0,.75);
-  margin-bottom:26px;
+  font-weight:300;
+  line-height:1.02;
+  letter-spacing:.5px;
+  color:#f2d79c;
+  text-shadow:
+    0 3px 16px rgba(0,0,0,.75),
+    0 0 22px rgba(212,175,55,.18);
+  margin-bottom:22px;
 }
 
 .homepage-decor{
-  width:340px;
-  max-width:72vw;
+  width:240px;
+  max-width:56vw;
   height:auto;
-  margin-bottom:22px;
-  filter:drop-shadow(0 0 12px rgba(212,175,55,.38));
+  margin-bottom:18px;
+  filter:drop-shadow(0 0 10px rgba(212,175,55,.32));
 }
 
 .homepage-date{
-  font-size:clamp(22px,3vw,34px);
-  letter-spacing:5px;
+  font-size:clamp(18px,2vw,26px);
+  letter-spacing:4px;
   text-transform:uppercase;
   color:#e9c879;
-  text-shadow:0 4px 18px rgba(0,0,0,.75);
+  text-shadow:0 4px 16px rgba(0,0,0,.75);
 }
 
 .eyebrow{
@@ -631,34 +638,38 @@ button,
 
 @media(max-width:700px) {
   .homepage-hero{
-    background-position:center center;
+    background:
+      linear-gradient(rgba(18,43,30,.52),rgba(80,20,20,.56)),
+      url("images/background-homepage.png")
+      center center/cover no-repeat;
+    background-color:#120f0d;
   }
 
   .hero-homepage{
-    min-height:82vh;
-    padding:28px 16px;
+    min-height:80vh;
+    padding:24px 16px;
   }
 
   .homepage-logo{
-    width:220px;
-    max-width:78vw;
-    margin-bottom:30px;
-  }
-
-  .homepage-title{
-    font-size:clamp(44px,15vw,62px);
-    line-height:1.08;
+    width:155px;
+    max-width:58vw;
     margin-bottom:24px;
   }
 
+  .homepage-title{
+    font-size:clamp(34px,11vw,50px);
+    line-height:1.05;
+    margin-bottom:22px;
+  }
+
   .homepage-decor{
-    width:250px;
-    max-width:80vw;
-    margin-bottom:20px;
+    width:205px;
+    max-width:70vw;
+    margin-bottom:18px;
   }
 
   .homepage-date{
-    font-size:21px;
+    font-size:17px;
     letter-spacing:3px;
   }
 

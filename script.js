@@ -60,24 +60,26 @@ const invitationScreen = document.getElementById("invitation-screen");
 const openInvitationButton = document.getElementById("open-invitation");
 const weddingMusic = document.getElementById("wedding-music");
 
-openInvitationButton.addEventListener("click", function () {
+openInvitationButton.addEventListener("click", async function () {
+
   invitationScreen.classList.add("opening");
 
-  weddingMusic.volume = 0.4;
+  try {
 
-  const playPromise = weddingMusic.play();
+    weddingMusic.volume = 0.4;
 
-  if (playPromise !== undefined) {
-    playPromise
-      .then(function () {
-        console.log("Musica avviata");
-      })
-      .catch(function () {
-        alert("Tocca di nuovo lo schermo per avviare la musica 🎵");
-      });
+    await weddingMusic.play();
+
+    console.log("Musica partita");
+
+  } catch (error) {
+
+    console.log("Autoplay bloccato:", error);
+
   }
 
   setTimeout(function () {
     invitationScreen.classList.add("hidden");
   }, 900);
+
 });

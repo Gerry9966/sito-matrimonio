@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Gerardo & Rosanna - Matrimonio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: #2f2a28;
+      background: #faf7f2;
+      line-height: 1.6;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      color: white;
+      background:
+        linear-gradient(rgba(18, 43, 30, 0.65), rgba(120, 20, 20, 0.65)),
+        url("https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+    }
+
+    .hero {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #f6dede;
+    }
+
+    h1 {
+      font-size: clamp(48px, 10vw, 96px);
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+
+    .date {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 30px;
+      border: 1px solid white;
+      border-radius: 999px;
+      color: white;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.15);
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      background: white;
+      color: #8b0000;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 250, 245, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #eadfd7;
+      z-index: 10;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding: 16px;
+    }
+
+    nav a {
+      color: #2f2a28;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 42px;
+      font-weight: normal;
+      text-align: center;
+      margin-bottom: 24px;
+      color: #8b0000;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 40px;
+      font-size: 18px;
+    }
+
+    .countdown-box {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      max-width: 750px;
+      margin: 40px auto 0;
+    }
+
+    .countdown-item {
+      background: white;
+      border: 1px solid #eadfd7;
+      border-radius: 24px;
+      padding: 26px 16px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(61, 52, 47, 0.08);
+    }
+
+    .countdown-item span {
+      display: block;
+      font-size: 42px;
+      color: #8b0000;
+    }
+
+    .countdown-item small {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      color: #23412e;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #eadfd7;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(61, 52, 47, 0.06);
+    }
+
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      font-weight: normal;
+      color: #8b0000;
+    }
+
+    .timeline {
+      max-width: 650px;
+      margin: 30px auto 0;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 20px;
+      padding: 18px 0;
+      border-bottom: 1px solid #eadfd7;
+    }
+
+    .time {
+      color: #8b0000;
+      font-weight: bold;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 30px auto 0;
+      display: grid;
+      gap: 16px;
+      background: white;
+      padding: 30px;
+      border-radius: 28px;
+      border: 1px solid #eadfd7;
+      box-shadow: 0 10px 30px rgba(61, 52, 47, 0.06);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #d8c7bd;
+      border-radius: 14px;
+      font: inherit;
+      background: white;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    button {
+      padding: 14px 24px;
+      border: none;
+      border-radius: 999px;
+      background: #8b0000;
+      color: white;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #6f0000;
+    }
+
+    #form-message {
+      text-align: center;
+      font-weight: bold;
+      color: #23412e;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: #23412e;
+      color: white;
+    }
+
+    @media (max-width: 700px) {
+      .countdown-box {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .timeline-item {
+        grid-template-columns: 70px 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header id="home">
+    <div class="hero">
+      <p class="eyebrow">Ci sposiamo</p>
+      <h1>Gerardo & Rosanna</h1>
+      <p class="date">3 Gennaio 2027 · Puglianello (BN)</p>
+      <a class="button" href="#rsvp">Conferma la tua presenza</a>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#storia">La nostra storia</a></li>
+      <li><a href="#countdown">Countdown</a></li>
+      <li><a href="#dettagli">Dettagli</a></li>
+      <li><a href="#programma">Programma</a></li>
+      <li><a href="#rsvp">RSVP</a></li>
+    </ul>
+  </nav>
+
+  <section id="storia">
+    <h2>La nostra storia</h2>
+    <p class="intro">
+      Nel periodo più magico dell’anno, siamo felici di celebrare il nostro amore
+      insieme alle persone che rendono la nostra vita speciale.
+      Vi aspettiamo per condividere una giornata piena di emozioni,
+      calore e atmosfera natalizia.
+    </p>
+  </section>
+
+  <section id="countdown">
+    <h2>Manca sempre meno</h2>
+    <p class="intro">
+      Il conto alla rovescia è iniziato.
+    </p>
+
+    <div class="countdown-box">
+      <div class="countdown-item">
+        <span id="days">0</span>
+        <small>Giorni</small>
+      </div>
+
+      <div class="countdown-item">
+        <span id="hours">0</span>
+        <small>Ore</small>
+      </div>
+
+      <div class="countdown-item">
+        <span id="minutes">0</span>
+        <small>Minuti</small>
+      </div>
+
+      <div class="countdown-item">
+        <span id="seconds">0</span>
+        <small>Secondi</small>
+      </div>
+    </div>
+  </section>
+
+  <section id="dettagli">
+    <h2>Dettagli del giorno</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Cerimonia</h3>
+        <p>
+          Parrocchia San Giacomo Apostolo<br />
+          Ore 16:00<br />
+          Puglianello (BN)
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Ricevimento</h3>
+        <p>
+          Castello di Faicchio<br />
+          Ore 18:30<br />
+          Faicchio (BN)
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Dress code</h3>
+        <p>
+          Elegante in stile invernale e natalizio.<br />
+          Toni caldi, verde bosco e bordeaux benvenuti.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="programma">
+    <h2>Programma</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="time">16:00</div>
+        <div>Cerimonia</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="time">18:30</div>
+        <div>Aperitivo al castello</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="time">20:00</div>
+        <div>Cena e festeggiamenti</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="time">22:30</div>
+        <div>Taglio della torta</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rsvp">
+    <h2>Conferma la tua presenza</h2>
+
+    <p class="intro">
+      Compila il modulo entro il 15 novembre 2026.
+    </p>
+
+    <form id="rsvp-form">
+      <input type="text" name="nome" placeholder="Nome e cognome" required />
+
+      <select name="partecipazione" required>
+        <option value="">Parteciperai?</option>
+        <option value="Sì">Sì, con gioia</option>
+        <option value="No">No, purtroppo</option>
+      </select>
+
+      <input type="number" name="numero_invitati" placeholder="Numero di persone" min="1" />
+
+      <textarea name="messaggio" placeholder="Allergie, intolleranze o messaggio per gli sposi"></textarea>
+
+      <button type="submit">Invia conferma</button>
+
+      <p id="form-message"></p>
+    </form>
+  </section>
+
+  <footer>
+    <p>Con amore, Gerardo & Rosanna</p>
+  </footer>
+
+  <script>
+    /* COUNTDOWN */
+    const weddingDate = new Date("2027-01-03T16:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      if (distance <= 0) {
+        document.getElementById("days").innerText = "0";
+        document.getElementById("hours").innerText = "0";
+        document.getElementById("minutes").innerText = "0";
+        document.getElementById("seconds").innerText = "0";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("seconds").innerText = seconds;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+
+    /* FORM RSVP COLLEGATO A GOOGLE FOGLI */
+    const GOOGLE_SCRIPT_URL = "INCOLLA_QUI_IL_TUO_LINK_GOOGLE_SCRIPT";
+
+    const form = document.getElementById("rsvp-form");
+    const message = document.getElementById("form-message");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      message.innerText = "Invio in corso...";
+
+      const formData = new FormData(form);
+
+      fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        body: formData
+      })
+      .then(function(response) {
+        message.innerText = "Grazie! La tua conferma è stata inviata.";
+        form.reset();
+      })
+      .catch(function(error) {
+        message.innerText = "Errore nell'invio. Riprova più tardi.";
+      });
+    });
+  </script>
+
+</body>
+</html>

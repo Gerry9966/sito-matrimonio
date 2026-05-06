@@ -69,19 +69,13 @@ if (form && message) {
 
 const invitationScreen = document.getElementById("invitation-screen");
 const openInvitationButton = document.getElementById("open-invitation");
-const weddingMusic = document.getElementById("wedding-music");
+
 
 if (openInvitationButton && invitationScreen) {
   openInvitationButton.addEventListener("click", function () {
     invitationScreen.classList.add("opening");
 
-    if (weddingMusic) {
-      weddingMusic.volume = 0.4;
 
-      weddingMusic.play().catch(function (error) {
-        console.log("Musica non partita:", error);
-      });
-    }
 
     setTimeout(function () {
       invitationScreen.classList.add("hidden");

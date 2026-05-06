@@ -385,3 +385,129 @@ footer{
   transform:translateY(-2px);
   background:#183021;
 }
+
+/* LOCATION PAGE PREMIUM */
+
+.location-page {
+  background: #fffaf3;
+}
+
+.location-page .location-hero {
+  min-height: 42vh;
+  background:
+    linear-gradient(rgba(20, 20, 15, .55), rgba(70, 25, 15, .55)),
+    url("images/background-natale.png")
+    center/cover;
+  position: relative;
+}
+
+.location-page .location-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 70px;
+  background: #fffaf3;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+.location-main {
+  position: relative;
+  padding: 30px 20px 60px;
+}
+
+.location-intro {
+  text-align: center;
+  padding: 0 20px 30px;
+}
+
+.location-intro h2 {
+  color: #8b0000;
+  font-size: clamp(34px, 5vw, 52px);
+}
+
+.decor {
+  color: #c49a54;
+  font-size: 34px;
+}
+
+.decor-line {
+  color: #c49a54;
+  font-size: 30px;
+  margin-top: -16px;
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.venue-card {
+  background: white;
+  border-radius: 18px;
+  padding: 26px 26px 34px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(80, 50, 30, .12);
+  border: 1px solid rgba(196, 154, 84, .18);
+}
+
+.venue-card img {
+  width: 100%;
+  height: 310px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.venue-type {
+  color: #8b0000;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 8px;
+}
+
+.venue-card h3 {
+  font-size: 28px;
+  color: #2f2a28;
+  margin: 6px 0;
+}
+
+.venue-place {
+  color: #9b8c7a;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.location-page .map-button {
+  display: inline-block;
+  background: #23412e;
+  color: white;
+  padding: 13px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(35, 65, 46, .22);
+}
+
+.back-home {
+  text-align: center;
+  margin-top: 42px;
+}
+
+.back-home a {
+  color: #c49a54;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+@media (max-width: 800px) {
+  .locations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .venue-card img {
+    height: 240px;
+  }
+}

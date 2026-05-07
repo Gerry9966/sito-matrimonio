@@ -1103,3 +1103,157 @@ button,
     display:none;
   }
 }
+
+/* GIFT MODAL */
+
+.gift-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(20,15,12,.58);
+  backdrop-filter:blur(8px);
+  z-index:20000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:22px;
+}
+
+.gift-modal.open{
+  display:flex;
+}
+
+.gift-modal-box{
+  width:min(92vw,620px);
+  max-height:90vh;
+  overflow:auto;
+  background:#fffaf3;
+  border-radius:30px;
+  padding:34px;
+  position:relative;
+  box-shadow:0 30px 90px rgba(0,0,0,.32);
+  border:1px solid rgba(196,154,84,.24);
+}
+
+.gift-close{
+  position:absolute;
+  top:18px;
+  right:18px;
+  width:40px;
+  height:40px;
+  padding:0;
+  background:transparent;
+  color:#8b0000;
+  font-size:24px;
+}
+
+.gift-modal-box h2{
+  font-size:40px;
+  margin-bottom:14px;
+}
+
+.gift-modal-text{
+  text-align:center;
+  color:#6d625c;
+  font-size:18px;
+  line-height:1.7;
+  margin-bottom:24px;
+}
+
+#giftForm{
+  box-shadow:none;
+  border:none;
+  padding:0;
+  background:transparent;
+}
+
+.iban-box{
+  display:none;
+  margin-top:24px;
+  padding:22px;
+  border-radius:22px;
+  background:rgba(196,154,84,.10);
+  border:1px dashed rgba(196,154,84,.55);
+}
+
+.iban-box.open{
+  display:block;
+}
+
+.iban-box p{
+  margin-bottom:16px;
+  color:#2f2a28;
+}
+
+.iban-details{
+  display:grid;
+  gap:8px;
+  margin-bottom:18px;
+  word-break:break-word;
+}
+
+.iban-details span{
+  color:#6d625c;
+}
+
+.iban-details button{
+  justify-self:start;
+  background:#23412e;
+  font-size:14px;
+  padding:10px 18px;
+}
+
+.confirm-transfer{
+  width:100%;
+  margin-top:8px;
+}
+
+@media(max-width:700px){
+  .gift-modal-box{
+    padding:28px 20px;
+    border-radius:24px;
+  }
+
+  .gift-modal-box h2{
+    font-size:32px;
+  }
+}
+
+/* GIFT SUCCESS POPUP */
+
+.gift-success{
+  position:fixed;
+  inset:0;
+  background:rgba(20,15,12,.45);
+  backdrop-filter:blur(8px);
+  z-index:25000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:22px;
+}
+
+.gift-success.open{
+  display:flex;
+}
+
+.gift-success-box{
+  width:min(90vw,520px);
+  background:#fffaf3;
+  border-radius:30px;
+  padding:36px 28px;
+  text-align:center;
+  box-shadow:0 30px 90px rgba(0,0,0,.32);
+  border:1px solid rgba(196,154,84,.24);
+}
+
+.gift-success-box h2{
+  color:#8b0000;
+  font-size:40px;
+  margin-bottom:16px;
+}
+
+.gift-success-box p{
+  color:#6d625c;
+  font-size:18px;
+  line-height:1.7;
+}

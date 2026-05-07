@@ -121,5 +121,109 @@
   <img src="../images/torna-home.png" alt="Torna all’invito">
 </a>
 
+<!-- MODAL REGALI -->
+
+<div class="gift-modal" id="giftModal">
+
+  <div class="gift-modal-box">
+
+    <button class="gift-close" id="closeGiftModal">
+      ✕
+    </button>
+
+    <h2>Grazie di cuore ❤️</h2>
+
+    <p class="gift-modal-text">
+      Sapere che un pezzo di questo viaggio porterà anche il vostro affetto
+      lo renderà ancora più speciale ❤️
+    </p>
+
+    <form id="giftForm">
+
+      <input
+        type="text"
+        id="giftName"
+        placeholder="Nome e cognome"
+        required
+      >
+
+      <input
+        type="hidden"
+        id="giftSelected"
+      >
+
+      <input
+        type="number"
+        id="giftAmount"
+        placeholder="Importo del contributo"
+        required
+      >
+
+      <textarea
+        id="giftMessage"
+        placeholder="Un messaggio per gli sposi (facoltativo)"
+      ></textarea>
+
+      <button type="button" id="showIbanButton">
+        Mostra IBAN
+      </button>
+
+      <!-- IBAN BOX -->
+
+      <div class="iban-box" id="ibanBox">
+
+        <p>
+          Per completare il regalo puoi fare un bonifico a:
+        </p>
+
+        <div class="iban-details">
+
+          <strong>IBAN:</strong>
+          <span id="ibanText">
+            IT00X0000000000000000000000
+          </span>
+
+          <button type="button" id="copyIban">
+            Copia IBAN
+          </button>
+
+        </div>
+
+        <div class="iban-details">
+
+          <strong>Causale:</strong>
+
+          <span id="causaleText"></span>
+
+          <button type="button" id="copyCausale">
+            Copia causale
+          </button>
+
+        </div>
+
+        <button type="submit" class="confirm-transfer">
+          Ho fatto il bonifico ❤️
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+
+<div class="gift-success" id="giftSuccess">
+  <div class="gift-success-box">
+    <h2>Grazie di cuore ❤️</h2>
+    <p>
+      Sapere che un pezzo di questo viaggio porterà anche il vostro affetto
+      lo renderà ancora più speciale ❤️
+    </p>
+  </div>
+</div>
+
+<script src="./regali.js"></script>
+
 </body>
 </html>

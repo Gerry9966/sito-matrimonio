@@ -137,26 +137,88 @@ h1{
   color:white;
 }
 
+/* NAVBAR */
+
 nav{
   position:sticky;
   top:0;
-  background:rgba(255,250,245,.95);
-  backdrop-filter:blur(8px);
+  background:rgba(255,250,245,.96);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
   z-index:10;
+  border-bottom:1px solid rgba(196,154,84,.14);
+  box-shadow:0 10px 30px rgba(80,50,30,.04);
 }
 
 nav ul{
   display:flex;
   justify-content:center;
-  gap:24px;
+  align-items:center;
+  gap:34px;
   list-style:none;
-  padding:16px;
+  padding:18px 16px;
   flex-wrap:wrap;
 }
 
 nav a{
+  position:relative;
   text-decoration:none;
   color:#2f2a28;
+  font-size:20px;
+  line-height:1;
+  transition:.25s ease;
+}
+
+nav a:not(.nav-lista-nozze)::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-9px;
+  width:0;
+  height:1px;
+  background:#c49a54;
+  transform:translateX(-50%);
+  transition:.25s ease;
+}
+
+nav a:not(.nav-lista-nozze):hover{
+  color:#8b0000;
+}
+
+nav a:not(.nav-lista-nozze):hover::after{
+  width:70%;
+}
+
+.nav-lista-nozze{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:12px 24px;
+  border-radius:999px;
+  color:#8b0000;
+  background:rgba(255,255,255,.58);
+  border:1px solid rgba(196,154,84,.34);
+  box-shadow:
+    0 12px 26px rgba(80,50,30,.08),
+    0 0 18px rgba(196,154,84,.12);
+  transition:.28s ease;
+}
+
+.nav-lista-nozze:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,.86);
+  border-color:rgba(196,154,84,.58);
+  box-shadow:
+    0 18px 34px rgba(80,50,30,.12),
+    0 0 24px rgba(196,154,84,.22);
+}
+
+.nav-gift-icon{
+  font-size:18px;
+  line-height:1;
+  display:inline-block;
+  transform:translateY(-1px);
 }
 
 section{
@@ -232,8 +294,8 @@ h2{
 
 .programma-section h2{
   font-size:clamp(42px,6vw,70px);
-  letter-spacing:11px;
-  text-transform:uppercase;
+  letter-spacing:0;
+  text-transform:none;
   margin-bottom:14px;
   line-height:1.05;
 }
@@ -784,12 +846,20 @@ button,
 /* MOBILE */
 
 @media(max-width:900px) {
-  .programma-section{
-    padding:82px 18px;
+  nav ul{
+    gap:22px;
   }
 
-  .programma-section h2{
-    letter-spacing:7px;
+  nav a{
+    font-size:18px;
+  }
+
+  .nav-lista-nozze{
+    padding:10px 18px;
+  }
+
+  .programma-section{
+    padding:82px 18px;
   }
 
   .programma-timeline{
@@ -861,6 +931,23 @@ button,
     font-size:14px;
   }
 
+  nav ul{
+    gap:16px;
+    padding:14px 10px;
+  }
+
+  nav a{
+    font-size:17px;
+  }
+
+  .nav-lista-nozze{
+    padding:9px 15px;
+  }
+
+  .nav-gift-icon{
+    font-size:16px;
+  }
+
   .hero-logo {
     width: 180px;
     margin-bottom: 18px;
@@ -880,7 +967,6 @@ button,
 
   .programma-section h2{
     font-size:clamp(34px,11vw,50px);
-    letter-spacing:5px;
   }
 
   .programma-divider{

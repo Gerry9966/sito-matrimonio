@@ -36,7 +36,7 @@ header{
   overflow:hidden;
   background:
     linear-gradient(rgba(18,43,30,.35),rgba(80,20,20,.45)),
-    url("images/background-homepage.png")
+    url("images/background-homepage-v2.png")
     center center/cover no-repeat;
   background-color:#120f0d;
 }
@@ -910,7 +910,7 @@ button,
     padding:0;
     background:
       linear-gradient(rgba(18,43,30,.52),rgba(80,20,20,.60)),
-      url("images/background-homepage.png")
+      url("images/background-homepage-v2.png")
       center center/cover no-repeat;
     background-color:#120f0d;
   }

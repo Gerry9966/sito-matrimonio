@@ -911,7 +911,7 @@ button,
     background:
       linear-gradient(rgba(18,43,30,.52),rgba(80,20,20,.60)),
       url("images/background-homepage-v2.png")
-      center center/cover no-repeat;
+      72% center/cover no-repeat;
     background-color:#120f0d;
   }
 
@@ -1570,6 +1570,33 @@ button,
 
   .side-menu .side-nav a{
     font-size:22px;
+  }
+
+}
+
+/* LOCATION HERO MOBILE FIX */
+
+.location-page .location-hero .hero{
+  position:relative;
+  z-index:2;
+}
+
+@media(max-width:700px){
+
+  .location-page .location-hero{
+    min-height:68svh;
+    padding:90px 20px 120px;
+    align-items:center;
+  }
+
+  .location-page .location-hero h1{
+    font-size:clamp(46px,14vw,70px);
+    line-height:.95;
+    margin-bottom:14px;
+  }
+
+  .location-page .location-hero::after{
+    height:46px;
   }
 
 }

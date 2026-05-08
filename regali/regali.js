@@ -126,3 +126,37 @@ async function copyToClipboard(text, button, successText) {
     alert("Copia non riuscita. Puoi copiare manualmente il testo.");
   }
 }
+
+/* HAMBURGER MENU */
+
+const menuToggle = document.getElementById('menuToggle');
+const sideMenu = document.getElementById('sideMenu');
+const sideOverlay = document.getElementById('sideOverlay');
+
+function openMenu() {
+  sideMenu.classList.add('open');
+  sideOverlay.classList.add('open');
+  menuToggle.classList.add('open');
+}
+
+function closeMenu() {
+  sideMenu.classList.remove('open');
+  sideOverlay.classList.remove('open');
+  menuToggle.classList.remove('open');
+}
+
+if (menuToggle && sideMenu && sideOverlay) {
+
+  menuToggle.addEventListener('click', () => {
+
+    if (sideMenu.classList.contains('open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+
+  });
+
+  sideOverlay.addEventListener('click', closeMenu);
+
+}

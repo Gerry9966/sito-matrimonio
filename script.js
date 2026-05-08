@@ -87,3 +87,41 @@ if (openInvitationButton && invitationScreen) {
     }, 900);
   });
 }
+
+/* HAMBURGER MENU */
+
+const menuToggle = document.getElementById('menuToggle');
+const sideMenu = document.getElementById('sideMenu');
+const sideOverlay = document.getElementById('sideOverlay');
+const sideClose = document.getElementById('sideClose');
+
+function openMenu() {
+  sideMenu.classList.add('open');
+  sideOverlay.classList.add('open');
+  menuToggle.classList.add('open');
+}
+
+function closeMenu() {
+  sideMenu.classList.remove('open');
+  sideOverlay.classList.remove('open');
+  menuToggle.classList.remove('open');
+}
+
+if(menuToggle){
+
+  menuToggle.addEventListener('click', () => {
+
+    if(sideMenu.classList.contains('open')){
+      closeMenu();
+    } else {
+      openMenu();
+    }
+
+  });
+
+}
+
+
+if(sideOverlay){
+  sideOverlay.addEventListener('click', closeMenu);
+}

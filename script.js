@@ -77,7 +77,9 @@ if (invitationAlreadyOpened === "true" && invitationScreen) {
 }
 
 if (openInvitationButton && invitationScreen) {
+
   openInvitationButton.addEventListener("click", function () {
+
     invitationScreen.classList.add("opening");
 
     localStorage.setItem("invitationOpened", "true");
@@ -85,7 +87,9 @@ if (openInvitationButton && invitationScreen) {
     setTimeout(function () {
       invitationScreen.classList.add("hidden");
     }, 900);
+
   });
+
 }
 
 /* HAMBURGER MENU */
@@ -124,4 +128,45 @@ if(menuToggle){
 
 if(sideOverlay){
   sideOverlay.addEventListener('click', closeMenu);
+}
+
+/* MUSIC PLAYER */
+
+const musicToggle = document.getElementById("musicToggle");
+const bgMusic = document.getElementById("bgMusic");
+
+let musicPlaying = false;
+
+if (musicToggle && bgMusic) {
+
+  bgMusic.volume = 0.12;
+
+  musicToggle.addEventListener("click", async () => {
+
+    try {
+
+      if (!musicPlaying) {
+
+        await bgMusic.play();
+
+        musicPlaying = true;
+        musicToggle.innerText = "❚❚ Pausa musica";
+
+      } else {
+
+        bgMusic.pause();
+
+        musicPlaying = false;
+        musicToggle.innerText = "▶︎ Musica";
+
+      }
+
+    } catch(error) {
+
+      console.log(error);
+
+    }
+
+  });
+
 }

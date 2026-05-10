@@ -1600,3 +1600,43 @@ button,
   }
 
 }
+
+/* MUSIC PLAYER */
+
+.music-player{
+  position:fixed;
+  left:20px;
+  bottom:20px;
+  z-index:30000;
+}
+
+#musicToggle{
+  background:rgba(35,65,46,.92);
+  color:#fff7e8;
+  border:none;
+  border-radius:999px;
+  padding:12px 18px;
+  font-size:14px;
+  cursor:pointer;
+  backdrop-filter:blur(10px);
+  box-shadow:0 10px 24px rgba(0,0,0,.22);
+  transition:.25s ease;
+}
+
+#musicToggle:hover{
+  transform:translateY(-2px);
+}
+
+@media(max-width:700px){
+
+  .music-player{
+    left:14px;
+    bottom:14px;
+  }
+
+  #musicToggle{
+    font-size:13px;
+    padding:10px 16px;
+  }
+
+}

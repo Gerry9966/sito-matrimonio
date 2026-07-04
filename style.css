@@ -1771,7 +1771,8 @@ button,
   padding:0;
 }
 
-.must-see-card{
+.must-see-card,
+.heart-place-card{
   background:white;
   border-radius:28px;
   overflow:hidden;
@@ -1780,13 +1781,14 @@ button,
   transition:.35s ease;
 }
 
-.must-see-card:hover{
+.must-see-card:hover,
+.heart-place-card:hover{
   transform:translateY(-4px);
   box-shadow:0 28px 70px rgba(80,50,30,.16);
 }
 
-.must-see-image{
-  height:320px;
+.must-see-image,
+.heart-place-image{
   background:#e8ddd1;
   background-size:cover;
   background-position:center;
@@ -1795,7 +1797,16 @@ button,
   transition:.7s ease;
 }
 
-.must-see-image::after{
+.must-see-image{
+  height:320px;
+}
+
+.heart-place-image{
+  height:230px;
+}
+
+.must-see-image::after,
+.heart-place-image::after{
   content:"";
   position:absolute;
   inset:0;
@@ -1805,7 +1816,8 @@ button,
   );
 }
 
-.must-see-card:hover .must-see-image{
+.must-see-card:hover .must-see-image,
+.heart-place-card:hover .heart-place-image{
   transform:scale(1.04);
 }
 
@@ -1835,6 +1847,30 @@ button,
 
 .must-see-image.acquedotto{
   background-image:url("images/esplora/acquedotto-carolino.jpg");
+}
+
+.heart-place-image.foro{
+  background-image:url("images/esplora/foro-dei-baroni.jpg");
+}
+
+.heart-place-image.historia{
+  background-image:url("images/esplora/historia-birreria.jpg");
+}
+
+.heart-place-image.pepe{
+  background-image:url("images/esplora/pepe-in-grani.jpg");
+}
+
+.heart-place-image.europa{
+  background-image:url("images/esplora/bar-europa-la-cucchiara.jpg");
+}
+
+.heart-place-image.minerva{
+  background-image:url("images/esplora/pasticceria-la-minerva.jpg");
+}
+
+.heart-place-image.big{
+  background-image:url("images/esplora/bar-big.jpg");
 }
 
 .must-see-content{
@@ -1906,25 +1942,26 @@ button,
 }
 
 .heart-place-card{
-  background:white;
-  border-radius:24px;
-  padding:30px 24px;
-  border:1px solid rgba(196,154,84,.18);
-  box-shadow:0 18px 45px rgba(80,50,30,.08);
+  padding-bottom:30px;
   text-align:center;
+}
+
+.heart-place-card h3{
+  padding:28px 22px 0;
 }
 
 .heart-place-card p{
   color:#9b8c7a;
   font-size:18px;
   margin-bottom:20px;
+  padding:0 22px;
 }
 
 .heart-place-card small{
   display:block;
   color:#6d625c;
   font-style:italic;
-  margin:-8px 0 20px;
+  margin:-8px 22px 20px;
 }
 
 .heart-place-card .map-button,
@@ -1933,10 +1970,7 @@ button,
 }
 
 @media(max-width:900px){
-  .must-see-grid{
-    grid-template-columns:1fr;
-  }
-
+  .must-see-grid,
   .heart-places-grid{
     grid-template-columns:1fr;
   }
@@ -1952,5 +1986,9 @@ button,
 
   .must-see-image{
     height:250px;
+  }
+
+  .heart-place-image{
+    height:230px;
   }
 }

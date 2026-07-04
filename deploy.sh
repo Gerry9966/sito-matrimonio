@@ -1,15 +1,27 @@
 #!/bin/bash
 
-echo "Controllo modifiche..."
+echo "🔍 Controllo repository..."
 git status
 
-echo "Aggiungo i file..."
+echo ""
+echo "➕ Aggiungo le modifiche..."
 git add .
 
-echo "Creo il commit..."
+echo ""
+echo "💾 Creo il commit..."
+
 git commit -m "Aggiornamento sito matrimonio"
 
-echo "Invio su GitHub..."
+if [ $? -ne 0 ]; then
+    echo ""
+    echo "✅ Nessuna modifica da pubblicare."
+    exit 0
+fi
+
+echo ""
+echo "🚀 Push su GitHub..."
 git push origin main
 
-echo "Fatto. Controlla il sito tra 1-2 minuti."
+echo ""
+echo "🎉 Deploy inviato!"
+echo "🌍 Tra circa un minuto il sito sarà aggiornato."

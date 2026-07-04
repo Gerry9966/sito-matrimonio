@@ -1729,3 +1729,228 @@ button,
   }
 
 }
+
+/* ESPLORA IL SANNIO */
+
+.esplora-page{
+  background:#fffaf3;
+}
+
+.esplora-hero{
+  min-height:62vh;
+  background:
+    linear-gradient(rgba(20,20,15,.50),rgba(70,25,15,.58)),
+    url("images/viale.png") center/cover no-repeat;
+}
+
+.esplora-hero-text{
+  max-width:760px;
+  margin:24px auto 0;
+  font-size:21px;
+  line-height:1.8;
+  color:#fff7e8;
+}
+
+.esplora-main{
+  padding:30px 20px 70px;
+}
+
+.esplora-intro,
+.heart-places-section{
+  text-align:center;
+  max-width:1000px;
+  margin:0 auto;
+}
+
+.must-see-grid{
+  max-width:1180px;
+  margin:0 auto 90px;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(320px,1fr));
+  gap:34px;
+  padding:0;
+}
+
+.must-see-card{
+  background:white;
+  border-radius:28px;
+  overflow:hidden;
+  border:1px solid rgba(196,154,84,.18);
+  box-shadow:0 20px 60px rgba(80,50,30,.10);
+  transition:.35s ease;
+}
+
+.must-see-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 28px 70px rgba(80,50,30,.16);
+}
+
+.must-see-image{
+  height:320px;
+  background:#e8ddd1;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  position:relative;
+  transition:.7s ease;
+}
+
+.must-see-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    rgba(60,35,20,.08),
+    rgba(35,20,15,.20)
+  );
+}
+
+.must-see-card:hover .must-see-image{
+  transform:scale(1.04);
+}
+
+.must-see-image.santagata{
+  background-image:url("images/esplora/santagata-de-goti.jpg");
+}
+
+.must-see-image.grassano{
+  background-image:url("images/esplora/parco-del-grassano.jpg");
+}
+
+.must-see-image.benevento{
+  background-image:url("images/esplora/benevento.jpg");
+}
+
+.must-see-image.cerreto{
+  background-image:url("images/esplora/cerreto-sannita.jpg");
+}
+
+.must-see-image.telese{
+  background-image:url("images/esplora/telese-terme.jpg");
+}
+
+.must-see-image.caserta{
+  background-image:url("images/esplora/reggia-di-caserta.jpg");
+}
+
+.must-see-image.acquedotto{
+  background-image:url("images/esplora/acquedotto-carolino.jpg");
+}
+
+.must-see-content{
+  padding:34px 30px 36px;
+  text-align:center;
+  background:white;
+  position:relative;
+  z-index:2;
+}
+
+.must-see-content::before{
+  content:"";
+  display:block;
+  width:70px;
+  height:1px;
+  background:#c49a54;
+  margin:0 auto 20px;
+}
+
+.must-see-label{
+  color:#c49a54;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:12px;
+  margin-bottom:10px;
+}
+
+.must-see-content h3,
+.heart-place-card h3{
+  font-family:'Cormorant Garamond', Georgia, serif;
+  font-size:36px;
+  color:#8b0000;
+  line-height:1.1;
+  margin-bottom:14px;
+}
+
+.must-see-content p{
+  color:#5f5650;
+  font-size:18px;
+  line-height:1.75;
+  margin-bottom:18px;
+}
+
+.must-see-content span{
+  display:block;
+  color:#9b8c7a;
+  font-style:italic;
+  margin-bottom:22px;
+}
+
+.heart-places-section{
+  padding-top:30px;
+}
+
+.heart-places-intro{
+  max-width:780px;
+  margin:0 auto 38px;
+  font-size:20px;
+  line-height:1.8;
+  color:#6d625c;
+}
+
+.heart-places-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(220px,1fr));
+  gap:24px;
+  max-width:1050px;
+  margin:0 auto;
+}
+
+.heart-place-card{
+  background:white;
+  border-radius:24px;
+  padding:30px 24px;
+  border:1px solid rgba(196,154,84,.18);
+  box-shadow:0 18px 45px rgba(80,50,30,.08);
+  text-align:center;
+}
+
+.heart-place-card p{
+  color:#9b8c7a;
+  font-size:18px;
+  margin-bottom:20px;
+}
+
+.heart-place-card small{
+  display:block;
+  color:#6d625c;
+  font-style:italic;
+  margin:-8px 0 20px;
+}
+
+.heart-place-card .map-button,
+.must-see-content .map-button{
+  margin-top:6px;
+}
+
+@media(max-width:900px){
+  .must-see-grid{
+    grid-template-columns:1fr;
+  }
+
+  .heart-places-grid{
+    grid-template-columns:1fr;
+  }
+
+  .esplora-hero{
+    min-height:70svh;
+    padding:90px 20px 100px;
+  }
+
+  .esplora-hero-text{
+    font-size:18px;
+  }
+
+  .must-see-image{
+    height:250px;
+  }
+}

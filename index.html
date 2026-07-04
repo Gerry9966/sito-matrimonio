@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
 
   
-  <link rel="stylesheet" href="style.css?v=25">
+  <link rel="stylesheet" href="style.css?v=26">
 </head>
 
 <body>
@@ -284,31 +284,68 @@
       </p>
     </div>
 
-  </section>
-
   <section id="rsvp">
-    <h2>Conferma la tua presenza</h2>
+  <h2>Conferma la tua presenza</h2>
 
-    <form id="rsvp-form">
-      <input type="text" name="nome" placeholder="Nome e cognome" required>
+  <form id="rsvp-form">
 
-      <select name="partecipazione" required>
-        <option value="">Parteciperai?</option>
-        <option value="Sì">Sì</option>
-        <option value="No">No</option>
-      </select>
+    <input type="text" name="nome" placeholder="Nome e cognome" required>
 
-      <input type="number" name="numero_invitati" placeholder="Numero invitati">
+    <select name="partecipazione" id="partecipazione" required>
+      <option value="">Parteciperai?</option>
+      <option value="Sì">Sì</option>
+      <option value="No">No</option>
+    </select>
 
-      <textarea name="messaggio" placeholder="Messaggio o allergie"></textarea>
+    <div id="rsvp-extra-fields" class="hidden-fields">
 
-      <button type="submit">
-        Invia conferma
-      </button>
+      <input
+        type="number"
+        name="numero_invitati"
+        placeholder="Numero di partecipanti"
+        min="1"
+      >
 
-      <p id="form-message"></p>
-    </form>
-  </section>
+      <textarea
+        name="allergie"
+        placeholder="Allergie o esigenze alimentari"
+      ></textarea>
+
+      <div class="sleep-box">
+        <p class="sleep-title">Necessiti di pernottamento?</p>
+
+        <p class="sleep-description">
+          Per gli ospiti che arrivano da lontano, saremo felici di offrire il pernottamento per la notte del matrimonio.
+        </p>
+
+        <select name="pernottamento" id="pernottamento">
+          <option value="">Necessiti di pernottamento?</option>
+          <option value="Sì">Sì</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+
+      <input
+        type="number"
+        name="numero_pernottamento"
+        id="numero_pernottamento"
+        class="hidden-fields"
+        placeholder="Per quante persone?"
+        min="1"
+      >
+
+    </div>
+
+    <button type="submit">Invia conferma</button>
+
+    <p class="rsvp-note">
+      Ti chiediamo gentilmente di confermare entro il 15 novembre 2026.
+    </p>
+
+    <p id="form-message"></p>
+
+  </form>
+</section>
 
   <footer>
     <img src="images/logo-hero.png" alt="Logo Rosanna e Gerardo" class="footer-logo">
@@ -328,7 +365,7 @@
 
 </div>
 
-  <script src="script.js?v=25"></script>
+  <script src="script.js?v=28"></script>
 
 </body>
 </html>

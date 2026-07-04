@@ -466,6 +466,95 @@ button{
   cursor:pointer;
 }
 
+/* RSVP PREMIUM */
+
+#rsvp form{
+  gap:22px;
+  padding:42px;
+}
+
+#rsvp input,
+#rsvp select,
+#rsvp textarea{
+  padding:18px 20px;
+  border-radius:22px;
+  font-size:18px;
+  background:#fff;
+  border:1px solid rgba(196,154,84,.32);
+  font-family:inherit;
+}
+
+#rsvp textarea{
+  min-height:105px;
+  resize:none;
+}
+
+.hidden-fields{
+  display:none;
+}
+
+.show-fields{
+  display:grid;
+  gap:22px;
+}
+
+#numero_pernottamento.show-fields{
+  display:block;
+}
+
+.sleep-box{
+  padding:4px 2px 0;
+}
+
+.sleep-title{
+  font-size:24px;
+  color:#8b0000;
+  margin-bottom:10px;
+  text-align:left;
+}
+
+.sleep-description{
+  font-size:16px;
+  line-height:1.7;
+  color:#6d625c;
+  margin-bottom:18px;
+}
+
+.rsvp-note{
+  text-align:center;
+  font-size:14px;
+  color:#8c8178;
+  line-height:1.6;
+  margin-top:-4px;
+}
+
+#form-message{
+  text-align:center;
+  color:#23412e;
+  font-size:15px;
+}
+
+@media(max-width:700px){
+
+  #rsvp form{
+    padding:28px 20px;
+    gap:18px;
+  }
+
+  #rsvp input,
+  #rsvp select,
+  #rsvp textarea{
+    font-size:16px;
+    padding:16px 18px;
+    border-radius:18px;
+  }
+
+  .sleep-title{
+    font-size:22px;
+  }
+
+}
+
 footer{
   text-align:center;
   padding:40px 20px;

@@ -46,7 +46,9 @@ const form = document.getElementById("rsvp-form");
 const message = document.getElementById("form-message");
 
 if (form && message) {
+
   form.addEventListener("submit", function(event) {
+
     event.preventDefault();
 
     message.innerText = "Invio in corso...";
@@ -60,8 +62,66 @@ if (form && message) {
     });
 
     message.innerText = "Grazie! Conferma inviata.";
+
     form.reset();
+
+    if (extraFields) {
+      extraFields.classList.remove("show-fields");
+    }
+
+    if (numeroPernottamento) {
+      numeroPernottamento.classList.remove("show-fields");
+    }
+
   });
+
+}
+
+
+/* RSVP DYNAMIC FIELDS */
+
+const partecipazioneSelect = document.getElementById("partecipazione");
+const extraFields = document.getElementById("rsvp-extra-fields");
+
+const pernottamentoSelect = document.getElementById("pernottamento");
+const numeroPernottamento = document.getElementById("numero_pernottamento");
+
+if (partecipazioneSelect && extraFields) {
+
+  partecipazioneSelect.addEventListener("change", function () {
+
+    if (this.value === "Sì") {
+      extraFields.classList.add("show-fields");
+    } else {
+      extraFields.classList.remove("show-fields");
+
+      if (pernottamentoSelect) {
+        pernottamentoSelect.value = "";
+      }
+
+      if (numeroPernottamento) {
+        numeroPernottamento.classList.remove("show-fields");
+        numeroPernottamento.value = "";
+      }
+    }
+
+  });
+
+}
+
+if (pernottamentoSelect && numeroPernottamento) {
+
+  pernottamentoSelect.addEventListener("change", function () {
+
+    if (this.value === "Sì") {
+      numeroPernottamento.classList.add("show-fields");
+    } else {
+      numeroPernottamento.classList.remove("show-fields");
+      numeroPernottamento.value = "";
+    }
+
+  });
+
 }
 
 
@@ -85,30 +145,36 @@ if (openInvitationButton && invitationScreen) {
     localStorage.setItem("invitationOpened", "true");
 
     setTimeout(function () {
+
       invitationScreen.classList.add("hidden");
+
     }, 900);
 
   });
 
 }
 
+
 /* HAMBURGER MENU */
 
 const menuToggle = document.getElementById('menuToggle');
 const sideMenu = document.getElementById('sideMenu');
 const sideOverlay = document.getElementById('sideOverlay');
-const sideClose = document.getElementById('sideClose');
 
 function openMenu() {
+
   sideMenu.classList.add('open');
   sideOverlay.classList.add('open');
   menuToggle.classList.add('open');
+
 }
 
 function closeMenu() {
+
   sideMenu.classList.remove('open');
   sideOverlay.classList.remove('open');
   menuToggle.classList.remove('open');
+
 }
 
 if(menuToggle){
@@ -116,19 +182,25 @@ if(menuToggle){
   menuToggle.addEventListener('click', () => {
 
     if(sideMenu.classList.contains('open')){
+
       closeMenu();
+
     } else {
+
       openMenu();
+
     }
 
   });
 
 }
 
-
 if(sideOverlay){
+
   sideOverlay.addEventListener('click', closeMenu);
+
 }
+
 
 /* MUSIC PLAYER */
 
@@ -150,6 +222,7 @@ if (musicToggle && bgMusic) {
         await bgMusic.play();
 
         musicPlaying = true;
+
         musicToggle.innerText = "❚❚ Pausa musica";
 
       } else {
@@ -157,6 +230,7 @@ if (musicToggle && bgMusic) {
         bgMusic.pause();
 
         musicPlaying = false;
+
         musicToggle.innerText = "▶︎ Musica";
 
       }

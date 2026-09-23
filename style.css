@@ -59,22 +59,36 @@ header{
   z-index:2;
 }
 
-.homepage-logo{
-  width:330px;
-  max-width:78vw;
-  height:auto;
-  margin-bottom:26px;
-  filter:drop-shadow(0 0 18px rgba(212,175,55,.42));
-  animation:fadeInLogo 1.4s ease both;
+.homepage-logo {
+  width: 220px;
+  max-width: 50vw;
+  height: auto;
+  margin: 0 auto 24px;
+  display: block;
+
+  /* Logo più piccolo e leggermente più in alto, senza sovrapposizioni */
+  transform: translateY(-42px);
+
+  filter:
+    brightness(1.15)
+    contrast(1.08)
+    drop-shadow(0 2px 5px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 0 16px rgba(214, 170, 72, 0.18));
+
+  animation: fadeInLogo 1.4s ease both;
 }
 
 .homepage-eyebrow{
-  font-size:14px;
-  letter-spacing:6px;
+  font-size:21px;
+  letter-spacing:9px;
   text-transform:uppercase;
   color:#f0d7a1;
-  margin-bottom:16px;
-  text-shadow:0 3px 14px rgba(0,0,0,.75);
+  margin-top:-18px;
+  margin-bottom:24px;
+  font-weight:600;
+  text-shadow:
+    0 2px 5px rgba(0,0,0,.75),
+    0 0 12px rgba(0,0,0,.35);
 }
 
 .homepage-names{
@@ -1013,15 +1027,17 @@ button,
   }
 
   .homepage-logo{
-    width:180px;
-    max-width:62vw;
-    margin-bottom:24px;
+    width:155px;
+    max-width:48vw;
+    margin:0 auto 20px;
+    transform:translateY(-24px);
   }
 
   .homepage-eyebrow{
-    font-size:11px;
-    letter-spacing:5px;
-    margin-bottom:16px;
+    font-size:15px;
+    letter-spacing:6px;
+    margin-top:-8px;
+    margin-bottom:20px;
   }
 
   .homepage-names{
@@ -3059,4 +3075,85 @@ button,
     padding: 38px 23px;
     border-radius: 24px;
   }
+}
+
+/* =========================================================
+   RSVP - PERSONE AGGIUNTIVE
+========================================================= */
+
+#partecipanti-aggiuntivi {
+  margin-top: 38px;
+}
+
+/* Blocco dedicato a ogni persona */
+.partecipante-aggiuntivo {
+  margin-top: 38px;
+  padding-top: 34px;
+  border-top: 1px solid rgba(139, 0, 0, 0.16);
+}
+
+/* Il primo blocco non ha bisogno di doppio margine */
+.partecipante-aggiuntivo:first-child {
+  margin-top: 0;
+}
+
+/* "Chi viene con te?" / "E chi altro?" */
+.partecipante-title {
+  margin: 0 0 24px 0;
+  font-size: 1.45rem;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+/* Nome */
+.partecipante-aggiuntivo input {
+  display: block;
+  width: 100%;
+  margin: 0 0 20px 0;
+}
+
+/* Allergie */
+.partecipante-aggiuntivo textarea {
+  display: block;
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+
+/* Blocco pernottamento */
+.partecipante-aggiuntivo .partecipante-sleep-box {
+  margin: 0;
+  padding: 0;
+}
+
+/* Domanda pernottamento */
+.partecipante-aggiuntivo .partecipante-sleep-box .sleep-title {
+  margin: 0 0 18px 0;
+}
+
+/* Select pernottamento */
+.partecipante-aggiuntivo .partecipante-sleep-box select {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+
+/* Spazio prima del pulsante Invia */
+#partecipanti-aggiuntivi + button {
+  margin-top: 38px;
+}
+
+/* Frase introduttiva RSVP */
+
+.rsvp-family-note {
+  text-align: center;
+  margin: -10px auto 32px;
+  padding: 0 20px;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: #6f625b;
+}
+
+.rsvp-family-note strong {
+  color: #990000;
+  font-weight: 600;
 }

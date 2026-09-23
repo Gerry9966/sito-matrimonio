@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,65 +10,133 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap"
+    rel="stylesheet"
+  >
 
-  
   <link rel="stylesheet" href="style.css?v=26">
 </head>
 
+
 <body>
 
-  
+  <!-- =========================
+       SCHERMATA INVITO
+  ========================== -->
 
   <div id="invitation-screen" class="invitation-screen">
+
     <div class="envelope-card">
+
       <div class="envelope-flap"></div>
 
       <div class="envelope-content">
-        <img src="images/logo-hero.png" alt="Logo Rosanna e Gerardo" class="invitation-logo">
 
-        <p class="invitation-small">Sei invitato al matrimonio di</p>
+        <img
+          src="images/logo-hero.png"
+          alt="Logo Rosanna e Gerardo"
+          class="invitation-logo"
+        >
+
+        <p class="invitation-small">
+          Sei invitato al matrimonio di
+        </p>
+
         <h2>Rosanna & Gerardo</h2>
-        <p class="invitation-date">3 Gennaio 2027</p>
 
-        <button id="open-invitation" class="open-invitation-button">
+        <p class="invitation-date">
+          3 Gennaio 2027
+        </p>
+
+        <button
+          id="open-invitation"
+          class="open-invitation-button"
+          type="button"
+        >
           Apri l’invito
         </button>
+
       </div>
+
     </div>
+
   </div>
+
+
+  <!-- =========================
+       NEVE
+  ========================== -->
 
   <div class="snow"></div>
 
-<button class="menu-toggle" id="menuToggle" aria-label="Apri menu">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
 
-<div class="side-overlay" id="sideOverlay"></div>
+  <!-- =========================
+       MENU MOBILE
+  ========================== -->
 
-<aside class="side-menu" id="sideMenu">
+  <button
+    class="menu-toggle"
+    id="menuToggle"
+    aria-label="Apri menu"
+    type="button"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
-  <img
-    src="images/logo-hero.png"
-    alt="Logo Rosanna e Gerardo"
-    class="side-logo"
+  <div
+    class="side-overlay"
+    id="sideOverlay"
+  ></div>
+
+  <aside
+    class="side-menu"
+    id="sideMenu"
   >
 
-  <nav class="side-nav">
-    <a href="./">Home</a>
-    <a href="location/">Location</a>
-    <a href="regali/">Lista Nozze</a>
-  </nav>
+    <img
+      src="images/logo-hero.png"
+      alt="Logo Rosanna e Gerardo"
+      class="side-logo"
+    >
 
-</aside>
+    <nav class="side-nav">
+
+      <a href="./">
+        Home
+      </a>
+
+      <a href="location/">
+        Location
+      </a>
+
+      <a href="regali/">
+        Lista Nozze
+      </a>
+
+    </nav>
+
+  </aside>
 
 
-  <header id="home" class="homepage-hero">
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <header
+    id="home"
+    class="homepage-hero"
+  >
+
     <div class="hero hero-homepage">
 
-      <img src="images/logo-hero.png" alt="Logo Rosanna e Gerardo" class="homepage-logo">
+      <img
+        src="images/logo-hero.png"
+        alt="Logo Rosanna e Gerardo"
+        class="homepage-logo"
+      >
 
       <p class="homepage-eyebrow">
         Ci sposiamo
@@ -81,43 +150,110 @@
         3 Gennaio 2027
       </p>
 
-      <a class="homepage-button" href="#rsvp">
+      <a
+        class="homepage-button"
+        href="#rsvp"
+      >
         Conferma la tua presenza
       </a>
 
     </div>
+
   </header>
 
+
+  <!-- =========================
+       NAVIGAZIONE
+  ========================== -->
+
   <nav>
+
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#programma">Dettagli</a></li>
-      <li><a href="location/">Location</a></li>
-      <li><a href="esplora/">Esplora il Sannio</a></li>
-      
+
       <li>
-        <a href="regali/" class="nav-lista-nozze">
-          <span class="nav-gift-icon">🎁</span>
-          <span>Lista Nozze</span>
+        <a href="#home">
+          Home
         </a>
       </li>
-      <li><a href="#rsvp">RSVP</a></li>
+
+      <li>
+        <a href="#programma">
+          Dettagli
+        </a>
+      </li>
+
+      <li>
+        <a href="location/">
+          Location
+        </a>
+      </li>
+
+      <li>
+        <a href="esplora/">
+          Esplora il Sannio
+        </a>
+      </li>
+
+      <li>
+
+        <a
+          href="regali/"
+          class="nav-lista-nozze"
+        >
+
+          <span class="nav-gift-icon">
+            🎁
+          </span>
+
+          <span>
+            Lista Nozze
+          </span>
+
+        </a>
+
+      </li>
+
+      <li>
+        <a href="#rsvp">
+          RSVP
+        </a>
+      </li>
+
     </ul>
+
   </nav>
 
+
+  <!-- =========================
+       LA NOSTRA STORIA
+  ========================== -->
+
   <section id="storia">
-    <h2>La nostra storia</h2>
+
+    <h2>
+      La nostra storia
+    </h2>
 
     <p class="intro">
       Nel periodo più magico dell’anno, siamo felici di celebrare il nostro amore
       insieme alle persone che rendono la nostra vita speciale.
     </p>
+
   </section>
 
+
+  <!-- =========================
+       COUNTDOWN
+  ========================== -->
+
   <section id="countdown">
-    <h2>Manca sempre meno</h2>
+
+    <h2>
+      Manca sempre meno
+    </h2>
 
     <div class="countdown-box">
+
       <div class="countdown-item">
         <span id="days">0</span>
         <small>Giorni</small>
@@ -137,19 +273,32 @@
         <span id="seconds">0</span>
         <small>Secondi</small>
       </div>
+
     </div>
+
   </section>
 
-  <section id="programma" class="programma-section">
+
+  <!-- =========================
+       PROGRAMMA
+  ========================== -->
+
+  <section
+    id="programma"
+    class="programma-section"
+  >
 
     <div class="programma-header">
+
       <img
         src="images/linea-3-piccola.png"
         alt=""
         class="programma-top-decoration"
       >
 
-      <h2>Dettagli</h2>
+      <h2>
+        Dettagli
+      </h2>
 
       <img
         src="images/linea-2-stella.png"
@@ -160,24 +309,36 @@
       <p class="programma-subtitle">
         I momenti più importanti della nostra giornata.
       </p>
+
     </div>
+
 
     <div class="programma-timeline">
 
+
+      <!-- PRIMA DEL MATRIMONIO -->
+
       <div class="programma-item">
+
         <div class="programma-icon-wrapper">
+
           <img
             src="images/linea-1-cuore.png"
             alt="Prima del matrimonio"
             class="programma-icon"
           >
+
         </div>
 
         <div class="programma-dot"></div>
 
-        <div class="programma-time">Da definire</div>
+        <div class="programma-time">
+          Da definire
+        </div>
 
-        <h3>Prima del matrimonio</h3>
+        <h3>
+          Prima del matrimonio
+        </h3>
 
         <img
           src="images/linea-2-stella.png"
@@ -189,22 +350,33 @@
           Eventuali momenti prima del grande giorno
           saranno comunicati qui.
         </p>
+
       </div>
 
+
+      <!-- CELEBRAZIONE -->
+
       <div class="programma-item">
+
         <div class="programma-icon-wrapper">
+
           <img
             src="images/chiesa-stil.png"
             alt="Celebrazione"
             class="programma-icon"
           >
+
         </div>
 
         <div class="programma-dot"></div>
 
-        <div class="programma-time">11:00</div>
+        <div class="programma-time">
+          11:00
+        </div>
 
-        <h3>Celebrazione</h3>
+        <h3>
+          Celebrazione
+        </h3>
 
         <img
           src="images/linea-2-stella.png"
@@ -216,22 +388,33 @@
           Parrocchia San Giacomo Apostolo<br>
           Puglianello (BN)
         </p>
+
       </div>
 
+
+      <!-- RISTORANTE -->
+
       <div class="programma-item">
+
         <div class="programma-icon-wrapper">
+
           <img
             src="images/pranzo.png"
             alt="Ristorante"
             class="programma-icon"
           >
+
         </div>
 
         <div class="programma-dot"></div>
 
-        <div class="programma-time">13:00</div>
+        <div class="programma-time">
+          13:00
+        </div>
 
-        <h3>Ristorante</h3>
+        <h3>
+          Ristorante
+        </h3>
 
         <img
           src="images/linea-2-stella.png"
@@ -243,22 +426,33 @@
           Castello di Faicchio<br>
           Faicchio (BN)
         </p>
+
       </div>
 
+
+      <!-- DOPO IL MATRIMONIO -->
+
       <div class="programma-item">
+
         <div class="programma-icon-wrapper">
+
           <img
             src="images/linea-1-cuore.png"
             alt="Dopo il matrimonio"
             class="programma-icon"
           >
+
         </div>
 
         <div class="programma-dot"></div>
 
-        <div class="programma-time">Da definire</div>
+        <div class="programma-time">
+          Da definire
+        </div>
 
-        <h3>Dopo il matrimonio</h3>
+        <h3>
+          Dopo il matrimonio
+        </h3>
 
         <img
           src="images/linea-2-stella.png"
@@ -270,11 +464,14 @@
           Eventuali momenti dopo il matrimonio
           saranno comunicati qui.
         </p>
+
       </div>
 
     </div>
 
+
     <div class="programma-footer">
+
       <img
         src="images/linea-1-cuore.png"
         alt=""
@@ -284,95 +481,229 @@
       <p>
         Non vediamo l’ora di vivere questi momenti insieme a voi.
       </p>
+
     </div>
+
+  </section>
+
+
+  <!-- =========================
+       RSVP
+  ========================== -->
 
   <section id="rsvp">
-  <h2>Conferma la tua presenza</h2>
 
-  <form id="rsvp-form">
+    <h2>
+      Conferma la tua presenza
+    </h2>
 
-    <input type="text" name="nome" placeholder="Nome e cognome" required>
+    <p class="rsvp-family-note">
+  <strong>Uno compila, gli altri ringraziano.</strong><br>
+  Puoi inserire qui anche chi viene con te 😉
+</p>
 
-    <select name="partecipazione" id="partecipazione" required>
-      <option value="">Parteciperai?</option>
-      <option value="Sì">Sì</option>
-      <option value="No">No</option>
-    </select>
+    <form id="rsvp-form">
 
-    <div id="rsvp-extra-fields" class="hidden-fields">
+
+      <!-- NOME -->
 
       <input
-        type="number"
-        name="numero_invitati"
-        placeholder="Numero di partecipanti"
-        min="1"
+        type="text"
+        name="nome"
+        id="nome"
+        placeholder="Nome e cognome"
+        autocomplete="name"
+        required
       >
 
-      <textarea
-        name="allergie"
-        placeholder="Allergie o esigenze alimentari"
-      ></textarea>
 
-      <div class="sleep-box">
-        <p class="sleep-title">Necessiti di pernottamento?</p>
+      <!-- PARTECIPAZIONE -->
 
-        <p class="sleep-description">
-          Per gli ospiti che arrivano da lontano, saremo felici di offrire il pernottamento per la notte del matrimonio.
-        </p>
+      <select
+        name="partecipazione"
+        id="partecipazione"
+        required
+      >
 
-        <select name="pernottamento" id="pernottamento">
-          <option value="">Necessiti di pernottamento?</option>
-          <option value="Sì">Sì</option>
-          <option value="No">No</option>
-        </select>
+        <option value="">
+          Parteciperai?
+        </option>
+
+        <option value="Sì">
+          Sì
+        </option>
+
+        <option value="No">
+          No
+        </option>
+
+      </select>
+
+
+      <!-- CAMPI VISIBILI SOLO SE PARTECIPA -->
+
+      <div
+        id="rsvp-extra-fields"
+        class="hidden-fields"
+      >
+
+
+        <!-- NUMERO PARTECIPANTI -->
+
+        <input
+          type="number"
+          name="numero_invitati"
+          id="numero_invitati"
+          placeholder="Numero di partecipanti"
+          min="1"
+          max="10"
+        >
+
+
+        <!-- ALLERGIE DEL COMPILATORE -->
+
+        <textarea
+          name="allergie"
+          id="allergie"
+          placeholder="Le tue allergie o esigenze alimentari"
+        ></textarea>
+
+
+        <!-- PERNOTTAMENTO DEL COMPILATORE -->
+
+        <div class="sleep-box">
+
+          <p class="sleep-title">
+            Necessiti di pernottamento?
+          </p>
+
+          <p class="sleep-description">
+            Per gli ospiti che arrivano da lontano,
+            saremo felici di offrire il pernottamento
+            per la notte del matrimonio.
+          </p>
+
+          <select
+            name="pernottamento"
+            id="pernottamento"
+          >
+
+            <option value="">
+              Necessiti di pernottamento?
+            </option>
+
+            <option value="Sì">
+              Sì
+            </option>
+
+            <option value="No">
+              No
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- =========================
+             PARTECIPANTI AGGIUNTIVI
+
+             Questo contenitore verrà
+             popolato automaticamente
+             da JavaScript.
+        ========================== -->
+
+        <div id="partecipanti-aggiuntivi"></div>
+
+
       </div>
 
-      <input
-        type="number"
-        name="numero_pernottamento"
-        id="numero_pernottamento"
-        class="hidden-fields"
-        placeholder="Per quante persone?"
-        min="1"
-      >
 
-    </div>
+      <!-- INVIO -->
 
-    <button type="submit">Invia conferma</button>
+      <button type="submit">
+        Invia conferma
+      </button>
 
-    <p class="rsvp-note">
-      Ti chiediamo gentilmente di confermare entro il 15 novembre 2026.
-    </p>
 
-    <p id="form-message"></p>
+      <p class="rsvp-note">
+        Ti chiediamo gentilmente di confermare
+        entro il 15 novembre 2026.
+      </p>
 
-  </form>
-</section>
+
+      <p
+        id="form-message"
+        aria-live="polite"
+      ></p>
+
+    </form>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
-    <img src="images/logo-hero.png" alt="Logo Rosanna e Gerardo" class="footer-logo">
-    <p>Con amore, Rosanna & Gerardo</p>
 
-  <p class="footer-privacy">
-    <a href="privacy/">Privacy Policy</a>
-  </p>
-  
+    <img
+      src="images/logo-hero.png"
+      alt="Logo Rosanna e Gerardo"
+      class="footer-logo"
+    >
+
+    <p>
+      Con amore, Rosanna & Gerardo
+    </p>
+
+    <p class="footer-privacy">
+      <a href="privacy/">
+        Privacy Policy
+      </a>
+    </p>
+
   </footer>
 
 
-<div class="music-player" id="musicPlayer">
+  <!-- =========================
+       MUSICA
+  ========================== -->
 
-  <button type="button" id="musicToggle">
-    ▶︎ Musica
-  </button>
+  <div
+    class="music-player"
+    id="musicPlayer"
+  >
 
-  <audio id="bgMusic" loop>
-    <source src="music/canzone-background.mp3" type="audio/mpeg">
-  </audio>
+    <button
+      type="button"
+      id="musicToggle"
+    >
+      ▶︎ Musica
+    </button>
 
-</div>
+    <audio
+      id="bgMusic"
+      loop
+    >
 
-  <script src="script.js?v=28"></script>
+      <source
+        src="music/canzone-background.mp3"
+        type="audio/mpeg"
+      >
+
+    </audio>
+
+  </div>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script src="script.js?v=29"></script>
 
 </body>
+
 </html>

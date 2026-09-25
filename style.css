@@ -3157,3 +3157,202 @@ button,
   color: #990000;
   font-weight: 600;
 }
+
+/* =========================================================
+   RSVP - VIAGGIO DI NOZZE
+========================================================= */
+
+.rsvp-gift-cta {
+  position: relative;
+  max-width: 720px;
+  margin: 58px auto 0;
+  padding: 44px 42px 42px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(255,255,255,.92),
+      transparent 52%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.82),
+      rgba(248,240,230,.92)
+    );
+
+  border: 1px solid rgba(196,154,84,.28);
+  border-radius: 30px;
+
+  box-shadow:
+    0 20px 50px rgba(80,50,30,.08);
+
+  overflow: hidden;
+}
+
+
+/* Piccolo dettaglio oro superiore */
+
+.rsvp-gift-cta::before {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width: 86px;
+  height: 2px;
+
+  background: #c49a54;
+
+  transform: translateX(-50%);
+}
+
+
+/* Scritta "UN PENSIERO PER NOI" */
+
+.rsvp-gift-kicker {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #a47a3a;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+
+/* Titolo */
+
+.rsvp-gift-cta h3 {
+  margin: 0 0 16px;
+
+  color: #8b0000;
+
+  font-family: 'Cormorant Garamond', Georgia, serif;
+
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 600;
+
+  line-height: 1.05;
+}
+
+
+/* Testo */
+
+.rsvp-gift-cta p {
+  max-width: 590px;
+
+  margin: 0 auto;
+
+  color: #6f625b;
+
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+
+/* Pulsante */
+
+.rsvp-gift-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 26px;
+
+  padding: 14px 28px;
+
+  color: #ffffff;
+  background: #23412e;
+
+  border: 1px solid rgba(35,65,46,.12);
+  border-radius: 999px;
+
+  box-shadow:
+    0 12px 26px rgba(35,65,46,.18);
+
+  text-decoration: none;
+
+  font-size: 16px;
+  line-height: 1.2;
+
+  transition:
+    transform .25s ease,
+    background-color .25s ease,
+    box-shadow .25s ease;
+}
+
+
+.rsvp-gift-button span {
+  font-size: 20px;
+  line-height: 1;
+
+  transition: transform .25s ease;
+}
+
+
+.rsvp-gift-button:hover {
+  background: #183021;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 16px 32px rgba(35,65,46,.24);
+}
+
+
+.rsvp-gift-button:hover span {
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .rsvp-gift-cta {
+    margin-top: 44px;
+
+    padding: 36px 22px 34px;
+
+    border-radius: 24px;
+  }
+
+
+  .rsvp-gift-kicker {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+
+  .rsvp-gift-cta h3 {
+    font-size: clamp(30px, 9vw, 38px);
+  }
+
+
+  .rsvp-gift-cta p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+
+  .rsvp-gift-button {
+    width: 100%;
+
+    margin-top: 24px;
+
+    padding: 14px 20px;
+  }
+
+}

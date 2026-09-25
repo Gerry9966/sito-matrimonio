@@ -65,8 +65,8 @@ setInterval(updateCountdown, 1000);
 ========================================================= */
 
 const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbx9yGO0NMZE17jES6VVY90sC5ZNNoJSaX1vt0p6qLigZKqSrdm52PmTMmln50w751lZ/exec";
-
+  "https://script.google.com/macros/s/AKfycbzrx47WkIycLgebMJ--2BhfX74qLMrZhr7vZ0y2M6uGoNbsN8khuK316qX1RIKEljRl/exec";
+  
 const form = document.getElementById("rsvp-form");
 const message = document.getElementById("form-message");
 

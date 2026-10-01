@@ -1136,11 +1136,15 @@ button,
   }
 }
 
-/* REGALI PAGE */
+/* =========================================================
+   REGALI PAGE - VIAGGIO DI NOZZE
+========================================================= */
 
 .regali-page{
   background:#faf7f2;
 }
+
+/* INTRO PAGINA */
 
 .regali-hero{
   max-width:900px;
@@ -1157,97 +1161,201 @@ button,
   color:#6d625c;
 }
 
-.regali-grid{
+/* UNA SOLA CARD */
+
+.single-gift-section{
   max-width:1200px;
-  margin:30px auto 90px;
-  display:grid;
-  grid-template-columns:repeat(2,minmax(320px,1fr));
-  gap:36px;
+  margin:10px auto 90px;
   padding:0 20px;
+  display:flex;
+  justify-content:center;
 }
 
-.regalo-card{
-  background:white;
+.honeymoon-single-card{
+  width:100%;
+  max-width:520px;
+  background:#fff;
+  border:1px solid rgba(196,154,84,.14);
   border-radius:28px;
   overflow:hidden;
   box-shadow:0 20px 50px rgba(80,50,30,.10);
-  border:1px solid rgba(196,154,84,.14);
-  transition:.35s ease;
+  transition:transform .35s ease, box-shadow .35s ease;
 }
 
-.regalo-card:hover{
+.honeymoon-single-card:hover{
   transform:translateY(-4px);
   box-shadow:0 28px 70px rgba(80,50,30,.16);
 }
 
-.regalo-card img{
+.honeymoon-single-card > img{
   width:100%;
-  height:340px;
+  height:320px;
   object-fit:cover;
   display:block;
 }
 
-.regalo-content{
-  padding:30px;
+.honeymoon-single-card .regalo-content{
+  padding:32px 30px 34px;
   text-align:center;
 }
 
-.regalo-content h2{
-  font-size:34px;
-  margin-bottom:16px;
+.honeymoon-single-card .regalo-content h2{
+  margin:0 0 16px;
   color:#8b0000;
+  font-family:'Cormorant Garamond', Georgia, serif;
+  font-size:34px;
+  font-weight:600;
+  line-height:1.1;
 }
 
-.regalo-content p{
+.honeymoon-single-card .regalo-content > p{
+  margin:0 auto 20px;
+  color:#4d4541;
   font-size:18px;
   line-height:1.8;
-  color:#4d4541;
-  margin-bottom:22px;
 }
 
-.regalo-content span{
+.honeymoon-secret{
   display:block;
-  font-size:15px;
-  line-height:1.7;
+  max-width:430px;
+  margin:0 auto 20px;
   color:#9b8c7a;
-  margin-bottom:26px;
+  font-size:16px;
   font-style:italic;
+  line-height:1.7;
 }
 
-.regalo-content button{
+.honeymoon-divider{
+  margin:4px auto 20px;
+  color:#a47a3a;
+  font-size:20px;
+  line-height:1;
+}
+
+/* IBAN */
+
+.honeymoon-iban{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:9px;
+  margin:0 auto;
+}
+
+.honeymoon-iban .iban-label{
+  color:#a47a3a;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+#ibanText{
+  display:block;
+  max-width:100%;
+  color:#3f3733;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:16px;
+  font-weight:400;
+  letter-spacing:.7px;
+  line-height:1.5;
+  overflow-wrap:anywhere;
+}
+
+/* PULSANTE COPIA IBAN
+   Il margin-top crea lo spazio tra IBAN e pulsante. */
+
+.copy-iban-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:180px;
+  margin:36px auto 0;
+  padding:13px 28px;
+  color:#fff;
   background:#23412e;
-  color:white;
-  border:none;
-  padding:14px 28px;
+  border:0;
   border-radius:999px;
+  box-shadow:0 12px 24px rgba(35,65,46,.18);
+  font-family:inherit;
   font-size:15px;
   cursor:pointer;
-  transition:.25s ease;
-  box-shadow:0 12px 24px rgba(35,65,46,.18);
+  transition:transform .25s ease, background .25s ease, box-shadow .25s ease;
 }
 
-.regalo-content button:hover{
-  transform:translateY(-2px);
+.copy-iban-button:hover{
   background:#183021;
+  transform:translateY(-2px);
+  box-shadow:0 16px 30px rgba(35,65,46,.24);
 }
 
-@media(max-width:900px){
+/* Messaggio mostrato dopo la copia.
+   Supporta entrambi i nomi usati nelle versioni recenti dell'HTML. */
 
-  .regali-grid{
-    grid-template-columns:1fr;
-    gap:28px;
-  }
+.iban-copy-feedback,
+.copy-feedback{
+  min-height:20px;
+  margin:12px 0 0 !important;
+  color:#8b0000 !important;
+  font-size:13px !important;
+  font-style:italic;
+  line-height:1.5;
+}
 
-  .regalo-card img{
-    height:280px;
+/* MOBILE */
+
+@media(max-width:700px){
+
+  .regali-hero{
+    padding:78px 18px 28px;
   }
 
   .regali-intro{
-    font-size:18px;
+    font-size:17px;
+    line-height:1.75;
   }
 
-  .regalo-content h2{
-    font-size:30px;
+  .single-gift-section{
+    margin:8px auto 65px;
+    padding:0 16px;
+  }
+
+  .honeymoon-single-card{
+    max-width:390px;
+    border-radius:22px;
+  }
+
+  .honeymoon-single-card > img{
+    height:235px;
+  }
+
+  .honeymoon-single-card .regalo-content{
+    padding:26px 20px 28px;
+  }
+
+  .honeymoon-single-card .regalo-content h2{
+    font-size:29px;
+  }
+
+  .honeymoon-single-card .regalo-content > p{
+    font-size:16px;
+    line-height:1.7;
+  }
+
+  .honeymoon-secret{
+    font-size:15px;
+  }
+
+  #ibanText{
+    font-size:14px;
+    letter-spacing:.35px;
+  }
+
+  .copy-iban-button{
+    width:min(100%,280px);
+    margin-top:34px;
+    padding:14px 24px;
+    font-size:15px;
   }
 }
 
@@ -1319,160 +1427,6 @@ button,
   .floating-home::after{
     display:none;
   }
-}
-
-/* GIFT MODAL */
-
-.gift-modal{
-  position:fixed;
-  inset:0;
-  background:rgba(20,15,12,.58);
-  backdrop-filter:blur(8px);
-  z-index:20000;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:22px;
-}
-
-.gift-modal.open{
-  display:flex;
-}
-
-.gift-modal-box{
-  width:min(92vw,620px);
-  max-height:90vh;
-  overflow:auto;
-  background:#fffaf3;
-  border-radius:30px;
-  padding:34px;
-  position:relative;
-  box-shadow:0 30px 90px rgba(0,0,0,.32);
-  border:1px solid rgba(196,154,84,.24);
-}
-
-.gift-close{
-  position:absolute;
-  top:18px;
-  right:18px;
-  width:40px;
-  height:40px;
-  padding:0;
-  background:transparent;
-  color:#8b0000;
-  font-size:24px;
-}
-
-.gift-modal-box h2{
-  font-size:40px;
-  margin-bottom:14px;
-}
-
-.gift-modal-text{
-  text-align:center;
-  color:#6d625c;
-  font-size:18px;
-  line-height:1.7;
-  margin-bottom:24px;
-}
-
-#giftForm{
-  box-shadow:none;
-  border:none;
-  padding:0;
-  background:transparent;
-}
-
-.iban-box{
-  display:none;
-  margin-top:24px;
-  padding:22px;
-  border-radius:22px;
-  background:rgba(196,154,84,.10);
-  border:1px dashed rgba(196,154,84,.55);
-}
-
-.iban-box.open{
-  display:block;
-}
-
-.iban-box p{
-  margin-bottom:16px;
-  color:#2f2a28;
-}
-
-.iban-details{
-  display:grid;
-  gap:8px;
-  margin-bottom:18px;
-  word-break:break-word;
-}
-
-.iban-details span{
-  color:#6d625c;
-}
-
-.iban-details button{
-  justify-self:start;
-  background:#23412e;
-  font-size:14px;
-  padding:10px 18px;
-}
-
-.confirm-transfer{
-  width:100%;
-  margin-top:8px;
-}
-
-@media(max-width:700px){
-  .gift-modal-box{
-    padding:28px 20px;
-    border-radius:24px;
-  }
-
-  .gift-modal-box h2{
-    font-size:32px;
-  }
-}
-
-/* GIFT SUCCESS POPUP */
-
-.gift-success{
-  position:fixed;
-  inset:0;
-  background:rgba(20,15,12,.45);
-  backdrop-filter:blur(8px);
-  z-index:25000;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:22px;
-}
-
-.gift-success.open{
-  display:flex;
-}
-
-.gift-success-box{
-  width:min(90vw,520px);
-  background:#fffaf3;
-  border-radius:30px;
-  padding:36px 28px;
-  text-align:center;
-  box-shadow:0 30px 90px rgba(0,0,0,.32);
-  border:1px solid rgba(196,154,84,.24);
-}
-
-.gift-success-box h2{
-  color:#8b0000;
-  font-size:40px;
-  margin-bottom:16px;
-}
-
-.gift-success-box p{
-  color:#6d625c;
-  font-size:18px;
-  line-height:1.7;
 }
 
 /* HAMBURGER MENU */

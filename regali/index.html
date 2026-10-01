@@ -1,247 +1,293 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Regali | Rosanna & Gerardo</title>
+  <title>Lista Nozze | Rosanna & Gerardo</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../style.css?v=27">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="../style.css?v=30">
 </head>
+
 
 <body class="regali-page">
 
   <div class="snow"></div>
 
-  <button class="menu-toggle" id="menuToggle" aria-label="Apri menu">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
 
-<div class="side-overlay" id="sideOverlay"></div>
+  <!-- =====================================================
+       MENU HAMBURGER
+  ====================================================== -->
 
-<aside class="side-menu" id="sideMenu">
+  <button
+    class="menu-toggle"
+    id="menuToggle"
+    type="button"
+    aria-label="Apri menu"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
-  <img
-    src="../images/logo-hero.png"
-    alt="Logo Rosanna e Gerardo"
-    class="side-logo"
+
+  <div
+    class="side-overlay"
+    id="sideOverlay"
+  ></div>
+
+
+  <aside
+    class="side-menu"
+    id="sideMenu"
   >
 
-  <nav class="side-nav">
-    <a href="../">Home</a>
-    <a href="../location/">Location</a>
-    <a href="../regali/">Lista Nozze</a>
-  </nav>
+    <img
+      src="../images/logo-hero.png"
+      alt="Logo Rosanna e Gerardo"
+      class="side-logo"
+    >
 
-</aside>
+    <nav class="side-nav">
+
+      <a href="../">
+        Home
+      </a>
+
+      <a href="../location/">
+        Location
+      </a>
+
+      <a href="../regali/">
+        Lista Nozze
+      </a>
+
+    </nav>
+
+  </aside>
 
 
+  <!-- =====================================================
+       CONTENUTO PRINCIPALE
+  ====================================================== -->
 
   <main>
 
-    <section class="regali-hero">
-      <img src="../images/logo-hero.png" alt="Logo Rosanna e Gerardo" class="hero-logo">
 
-      <p class="homepage-eyebrow">Lista nozze</p>
+    <!-- ===================================================
+         INTRODUZIONE
+    ==================================================== -->
+
+    <section class="regali-hero">
+
+      <img
+        src="../images/logo-hero.png"
+        alt="Logo Rosanna e Gerardo"
+        class="hero-logo"
+      >
+
+
+      <p class="homepage-eyebrow">
+        Lista nozze
+      </p>
+
 
       <h1 class="homepage-names">
-        Regalaci un pezzo del viaggio
+        Un regalo per il nostro viaggio
       </h1>
 
-      <p class="regali-intro">
-        Il regalo più grande sarà avervi con noi.
-        Se però desiderate farci un pensiero, potete contribuire simbolicamente
-        alla nostra luna di miele scegliendo uno dei momenti qui sotto.
-      </p>
+
+      <div class="regali-intro">
+
+        <p>
+          Il regalo più grande sarà avervi con noi
+          nel nostro giorno speciale.
+        </p>
+
+      </div>
+
     </section>
 
-    <section class="regali-grid">
 
-      <article class="regalo-card">
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Brindisi al tramonto">
+
+    <!-- ===================================================
+         CARD VIAGGIO DI NOZZE
+    ==================================================== -->
+
+    <section class="single-gift-section">
+
+
+      <article class="regalo-card honeymoon-single-card">
+
+
+        <!-- FOTO -->
+
+        <img
+          src="../images/viaggio-nozze.png"
+          alt="Il nostro viaggio di nozze"
+        >
+
+
+        <!-- CONTENUTO -->
+
         <div class="regalo-content">
-          <h2>Brindisi al tramonto</h2>
-          <p>Un momento tutto nostro per brindare all’inizio di questa nuova avventura.</p>
-          <span>Ogni contributo renderà questo momento ancora più speciale</span>
-          <button type="button">Scegli questo regalo</button>
+
+
+          <h2>
+            Il nostro viaggio di nozze
+          </h2>
+
+
+          <p>
+            Se desiderate farci un pensiero,
+            potete contribuire al nostro viaggio di nozze
+            e regalarci un piccolo pezzo di questa
+            nuova avventura insieme.
+          </p>
+
+
+          <!-- DESTINAZIONE SEGRETA -->
+
+          <span class="honeymoon-secret">
+
+            La destinazione?
+
+            Per ora resta un piccolo segreto…
+            ma promettiamo che non dovrete aspettare molto
+            per scoprirla.
+
+          </span>
+
+
+          <!-- DECORAZIONE -->
+
+          <div
+            class="honeymoon-divider"
+            aria-hidden="true"
+          >
+            ✦
+          </div>
+
+
+          <!-- IBAN -->
+
+          <div class="honeymoon-iban">
+
+            <span class="iban-label">
+              INTESTATARI:
+            </span>
+
+            <strong id="ibanText">
+              GERARDO E ROSANNA
+            </strong>
+
+            <span class="iban-label">
+              IBAN
+            </span>
+
+            <strong id="ibanText">
+              IT84R0306975513100000008135
+            </strong>
+
+          </div>
+
+
+          <!-- PULSANTE COPIA IBAN -->
+
+          <button
+            type="button"
+            id="copyIban"
+            class="copy-iban-button"
+          >
+            Copia IBAN
+          </button>
+
+
+          <!-- MESSAGGIO DOPO LA COPIA -->
+
+          <p
+            id="ibanCopyFeedback"
+            class="iban-copy-feedback"
+            aria-live="polite"
+          ></p>
+
+
         </div>
+
       </article>
 
-      <article class="regalo-card">
-        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80" alt="Cena romantica">
-        <div class="regalo-content">
-          <h2>Cena romantica</h2>
-          <p>Una cena speciale durante il viaggio, da ricordare con il sorriso.</p>
-          <span>Ogni contributo renderà questo momento ancora più speciale</span>
-          <button type="button">Scegli questo regalo</button>
-        </div>
-      </article>
-
-      <article class="regalo-card">
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Escursione da sogno">
-        <div class="regalo-content">
-          <h2>Escursione da sogno</h2>
-          <p>Un’esperienza da vivere insieme, lontano da tutto, vicini più che mai.</p>
-          <span>Ogni contributo renderà questo momento ancora più speciale</span>
-          <button type="button">Scegli questo regalo</button>
-        </div>
-      </article>
-
-      <article class="regalo-card">
-        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80" alt="Una notte speciale">
-        <div class="regalo-content">
-          <h2>Una notte speciale</h2>
-          <p>Una tappa indimenticabile del nostro viaggio di nozze.</p>
-          <span>Ogni contributo renderà questo momento ancora più speciale</span>
-          <button type="button">Scegli questo regalo</button>
-        </div>
-      </article>
-
-      <article class="regalo-card">
-        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=80" alt="Un pezzo di viaggio">
-        <div class="regalo-content">
-          <h2>Un pezzo di viaggio</h2>
-          <p>Un aiuto per partire, scoprire, perderci e ritrovarci insieme.</p>
-          <span>Ogni contributo renderà questo momento ancora più speciale</span>
-          <button type="button">Scegli questo regalo</button>
-        </div>
-      </article>
-
-      <article class="regalo-card">
-        <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=900&q=80" alt="Contributo libero">
-        <div class="regalo-content">
-          <h2>Contributo libero</h2>
-          <p>Un pensiero libero, senza importo suggerito, fatto con il cuore.</p>
-          <span>Ogni contributo renderà il nostro viaggio ancora più speciale</span>
-          <button type="button">Scegli questo regalo</button>
-        </div>
-      </article>
 
     </section>
 
   </main>
 
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
   <footer>
-    <img src="../images/logo-hero.png" alt="Logo Rosanna e Gerardo" class="footer-logo">
-    <p>Con amore, Rosanna & Gerardo</p>
-  <p class="footer-privacy">
-  <a href="../privacy/">Privacy Policy</a>
-</p>
-</footer>
 
-<a class="floating-home" href="../" aria-label="Torna alla home">
-  <img src="../images/torna-home.png" alt="Torna all’invito">
-</a>
+    <img
+      src="../images/logo-hero.png"
+      alt="Logo Rosanna e Gerardo"
+      class="footer-logo"
+    >
 
-<!-- MODAL REGALI -->
 
-<div class="gift-modal" id="giftModal">
-
-  <div class="gift-modal-box">
-
-    <button class="gift-close" id="closeGiftModal">
-      ✕
-    </button>
-
-    <h2>Grazie di cuore ❤️</h2>
-
-    <p class="gift-modal-text">
-      Sapere che un pezzo di questo viaggio porterà anche il vostro affetto
-      lo renderà ancora più speciale ❤️
-    </p>
-
-    <form id="giftForm">
-
-      <input
-        type="text"
-        id="giftName"
-        placeholder="Nome e cognome"
-        required
-      >
-
-      <input
-        type="hidden"
-        id="giftSelected"
-      >
-
-      <input
-        type="number"
-        id="giftAmount"
-        placeholder="Importo del contributo"
-        required
-      >
-
-      <textarea
-        id="giftMessage"
-        placeholder="Un messaggio per gli sposi (facoltativo)"
-      ></textarea>
-
-      <button type="button" id="showIbanButton">
-        Mostra IBAN
-      </button>
-
-      <!-- IBAN BOX -->
-
-      <div class="iban-box" id="ibanBox">
-
-        <p>
-          Per completare il regalo puoi fare un bonifico a:
-        </p>
-
-        <div class="iban-details">
-
-          <strong>IBAN:</strong>
-          <span id="ibanText">
-            IT00X0000000000000000000000
-          </span>
-
-          <button type="button" id="copyIban">
-            Copia IBAN
-          </button>
-
-        </div>
-
-        <div class="iban-details">
-
-          <strong>Causale:</strong>
-
-          <span id="causaleText"></span>
-
-          <button type="button" id="copyCausale">
-            Copia causale
-          </button>
-
-        </div>
-
-        <button type="submit" class="confirm-transfer">
-          Ho fatto il bonifico ❤️
-        </button>
-
-      </div>
-
-    </form>
-
-  </div>
-
-</div>
-
-<div class="gift-success" id="giftSuccess">
-  <div class="gift-success-box">
-    <h2>Grazie di cuore ❤️</h2>
     <p>
-      Sapere che un pezzo di questo viaggio porterà anche il vostro affetto
-      lo renderà ancora più speciale ❤️
+      Con amore, Rosanna & Gerardo
     </p>
-  </div>
-</div>
 
-<script src="./regali.js?v=25"></script>
+
+    <p class="footer-privacy">
+
+      <a href="../privacy/">
+        Privacy Policy
+      </a>
+
+    </p>
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       PULSANTE TORNA ALLA HOME
+  ====================================================== -->
+
+  <a
+    class="floating-home"
+    href="../"
+    aria-label="Torna alla home"
+  >
+
+    <img
+      src="../images/torna-home.png"
+      alt="Torna all’invito"
+    >
+
+  </a>
+
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script src="./regali.js?v=27"></script>
+
 
 </body>
+
 </html>

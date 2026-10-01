@@ -1,162 +1,149 @@
-const giftModal = document.getElementById("giftModal");
-const closeGiftModal = document.getElementById("closeGiftModal");
-const giftSelected = document.getElementById("giftSelected");
-const ibanBox = document.getElementById("ibanBox");
+/* =========================================================
+   LISTA NOZZE - VIAGGIO DI NOZZE
+========================================================= */
 
-const giftForm = document.getElementById("giftForm");
-const giftName = document.getElementById("giftName");
-const giftAmount = document.getElementById("giftAmount");
-const giftMessage = document.getElementById("giftMessage");
-
-const showIbanButton = document.getElementById("showIbanButton");
-const causaleText = document.getElementById("causaleText");
-const giftSuccess = document.getElementById("giftSuccess");
+const IBAN = "IT84R0306975513100000008135";
 
 const copyIbanButton = document.getElementById("copyIban");
-const copyCausaleButton = document.getElementById("copyCausale");
+const ibanCopyFeedback = document.getElementById("ibanCopyFeedback");
 
-const giftButtons = document.querySelectorAll(".regalo-card button");
 
-const IBAN = "IT00X0000000000000000000000";
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzVuQo7Ql493vzfsACDySRfUt6AbD4hWpxSW3vn9wnvik0xXWY8zAUC02a9TiPiJhht5Q/exec";
+/* =========================================================
+   COPIA IBAN
+========================================================= */
 
-giftButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const card = button.closest(".regalo-card");
-    const giftTitle = card.querySelector("h2").textContent.trim();
+if (copyIbanButton) {
 
-    giftSelected.value = giftTitle;
-    giftName.value = "";
-    giftAmount.value = "";
-    giftMessage.value = "";
-    causaleText.textContent = "";
+  copyIbanButton.addEventListener("click", async () => {
 
-    giftModal.classList.add("open");
-    ibanBox.classList.remove("open");
-  });
-});
+    const originalText = copyIbanButton.textContent;
 
-closeGiftModal.addEventListener("click", () => {
-  giftModal.classList.remove("open");
-});
+    try {
 
-giftModal.addEventListener("click", (event) => {
-  if (event.target === giftModal) {
-    giftModal.classList.remove("open");
-  }
-});
+      // Metodo principale
+      await navigator.clipboard.writeText(IBAN);
 
-showIbanButton.addEventListener("click", () => {
-  if (!giftName.value.trim() || !giftAmount.value.trim()) {
-    alert("Inserisci nome e importo prima di continuare.");
-    return;
-  }
+      copyIbanButton.textContent = "IBAN copiato ✓";
 
-  const nome = giftName.value.trim();
-  const regalo = giftSelected.value.trim();
+      if (ibanCopyFeedback) {
+        ibanCopyFeedback.textContent =
+          "Ora puoi incollarlo direttamente nell’app della tua banca.";
+      }
 
-  causaleText.textContent = `Regalo nozze ${nome} ${regalo}`;
-  ibanBox.classList.add("open");
-});
+      setTimeout(() => {
 
-copyIbanButton.addEventListener("click", async () => {
-  await copyToClipboard(IBAN, copyIbanButton, "IBAN copiato ✓");
-});
+        copyIbanButton.textContent = originalText;
 
-copyCausaleButton.addEventListener("click", async () => {
-  await copyToClipboard(causaleText.textContent, copyCausaleButton, "Causale copiata ✓");
-});
+        if (ibanCopyFeedback) {
+          ibanCopyFeedback.textContent = "";
+        }
 
-giftForm.addEventListener("submit", async (event) => {
-  event.preventDefault();
+      }, 3000);
 
-  if (!GOOGLE_SCRIPT_URL) {
-    alert("Form non ancora collegato a Google Sheets.");
-    return;
-  }
+    } catch (error) {
 
-  const submitButton = giftForm.querySelector(".confirm-transfer");
+      /*
+       * Metodo alternativo per browser che
+       * non supportano navigator.clipboard
+       */
 
-  const formData = new FormData();
-  formData.append("nome", giftName.value.trim());
-  formData.append("regalo", giftSelected.value.trim());
-  formData.append("importo", giftAmount.value.trim());
-  formData.append("messaggio", giftMessage.value.trim());
-  formData.append("causale", causaleText.textContent.trim());
-  formData.append("data", new Date().toLocaleString("it-IT"));
+      const temporaryInput = document.createElement("textarea");
 
-  try {
-    submitButton.disabled = true;
-    submitButton.textContent = "Invio in corso...";
+      temporaryInput.value = IBAN;
+      temporaryInput.setAttribute("readonly", "");
 
-    await fetch(GOOGLE_SCRIPT_URL, {
-      method: "POST",
-      body: formData
-    });
+      temporaryInput.style.position = "fixed";
+      temporaryInput.style.left = "-9999px";
+      temporaryInput.style.top = "-9999px";
 
-    giftModal.classList.remove("open");
-    giftSuccess.classList.add("open");
+      document.body.appendChild(temporaryInput);
 
-    giftForm.reset();
-    ibanBox.classList.remove("open");
-    causaleText.textContent = "";
+      temporaryInput.focus();
+      temporaryInput.select();
+      temporaryInput.setSelectionRange(0, IBAN.length);
 
-    setTimeout(() => {
-      giftSuccess.classList.remove("open");
-    }, 4200);
-  } catch (error) {
-    alert("C'è stato un problema nell'invio. Riprova tra qualche secondo.");
-  } finally {
-    submitButton.disabled = false;
-    submitButton.textContent = "Ho effettuato il bonifico ❤️";
-  }
-});
+      try {
 
-async function copyToClipboard(text, button, successText) {
-  const originalText = button.textContent;
+        document.execCommand("copy");
 
-  try {
-    await navigator.clipboard.writeText(text);
-    button.textContent = successText;
+        copyIbanButton.textContent = "IBAN copiato ✓";
 
-    setTimeout(() => {
-      button.textContent = originalText;
-    }, 2000);
-  } catch (error) {
-    alert("Copia non riuscita. Puoi copiare manualmente il testo.");
-  }
-}
+        if (ibanCopyFeedback) {
+          ibanCopyFeedback.textContent =
+            "Ora puoi incollarlo direttamente nell’app della tua banca.";
+        }
 
-/* HAMBURGER MENU */
+        setTimeout(() => {
 
-const menuToggle = document.getElementById('menuToggle');
-const sideMenu = document.getElementById('sideMenu');
-const sideOverlay = document.getElementById('sideOverlay');
+          copyIbanButton.textContent = originalText;
 
-function openMenu() {
-  sideMenu.classList.add('open');
-  sideOverlay.classList.add('open');
-  menuToggle.classList.add('open');
-}
+          if (ibanCopyFeedback) {
+            ibanCopyFeedback.textContent = "";
+          }
 
-function closeMenu() {
-  sideMenu.classList.remove('open');
-  sideOverlay.classList.remove('open');
-  menuToggle.classList.remove('open');
-}
+        }, 3000);
 
-if (menuToggle && sideMenu && sideOverlay) {
+      } catch (fallbackError) {
 
-  menuToggle.addEventListener('click', () => {
+        if (ibanCopyFeedback) {
+          ibanCopyFeedback.textContent =
+            "Copia manualmente l’IBAN: " + IBAN;
+        }
 
-    if (sideMenu.classList.contains('open')) {
-      closeMenu();
-    } else {
-      openMenu();
+      }
+
+      document.body.removeChild(temporaryInput);
     }
 
   });
 
-  sideOverlay.addEventListener('click', closeMenu);
+}
+
+
+/* =========================================================
+   HAMBURGER MENU
+========================================================= */
+
+const menuToggle = document.getElementById("menuToggle");
+const sideMenu = document.getElementById("sideMenu");
+const sideOverlay = document.getElementById("sideOverlay");
+
+
+function openMenu() {
+
+  sideMenu.classList.add("open");
+  sideOverlay.classList.add("open");
+  menuToggle.classList.add("open");
+
+}
+
+
+function closeMenu() {
+
+  sideMenu.classList.remove("open");
+  sideOverlay.classList.remove("open");
+  menuToggle.classList.remove("open");
+
+}
+
+
+if (menuToggle && sideMenu && sideOverlay) {
+
+  menuToggle.addEventListener("click", () => {
+
+    if (sideMenu.classList.contains("open")) {
+
+      closeMenu();
+
+    } else {
+
+      openMenu();
+
+    }
+
+  });
+
+
+  sideOverlay.addEventListener("click", closeMenu);
 
 }

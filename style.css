@@ -253,9 +253,49 @@ h2{
 }
 
 .intro{
-  text-align:center;
-  max-width:700px;
-  margin:auto;
+  position: relative;
+
+  max-width: 780px;
+  margin: 0 auto 28px;
+
+  text-align: center;
+
+  color: #4b0015;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(24px, 2.4vw, 36px);
+  font-weight: 500;
+
+  line-height: 1.18;
+  letter-spacing: 0.1px;
+}
+
+.intro::before{
+  content: "✦";
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #c49a54;
+  font-size: 16px;
+  line-height: 1;
+}
+
+@media (max-width: 700px){
+
+  .intro{
+    max-width: 90%;
+    margin-bottom: 18px;
+
+    font-size: clamp(21px, 6.2vw, 28px);
+    line-height: 1.22;
+  }
+
+  .intro::before{
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+
 }
 
 .countdown-box{
@@ -2540,6 +2580,7 @@ button,
 
 /* CONSERVAZIONE */
 
+
 .privacy-retention {
   margin-top: 28px;
 }
@@ -2548,29 +2589,40 @@ button,
   position: relative;
 
   height: 2px;
-  margin: 12px 11% -2px;
+  margin: 12px 16% -2px;
 
   background:
     linear-gradient(
       90deg,
       transparent,
-      #c49a54 12%,
-      #c49a54 88%,
+      #c49a54 10%,
+      #c49a54 90%,
       transparent
     );
 }
 
 .privacy-retention-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 120px;
+
+  width: min(1180px, 100%);
+  margin: 0 auto;
+
+  align-items: start;
 }
 
 .privacy-retention-grid article {
   position: relative;
 
+  width: 100%;
+  max-width: 480px;
+
   padding: 38px 28px 28px;
+
   text-align: center;
+
+  justify-self: center;
 }
 
 .privacy-retention-marker {
@@ -2586,24 +2638,80 @@ button,
   border-radius: 50%;
 
   box-shadow: 0 0 0 1px #c49a54;
+
   transform: translateX(-50%);
 }
 
 .privacy-retention-grid article > span {
   display: inline-block;
+
   margin-bottom: 14px;
   padding: 7px 14px;
 
   color: #7b002c;
+
   font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
 
   background: rgba(255, 255, 255, 0.6);
+
   border: 1px solid rgba(196, 154, 84, 0.4);
   border-radius: 999px;
 }
 
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+
+  .privacy-retention-grid {
+    gap: 56px;
+
+    width: min(900px, 100%);
+  }
+
+  .privacy-retention-grid article {
+    max-width: 420px;
+  }
+
+  .privacy-retention-line {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .privacy-retention-line {
+    display: none;
+  }
+
+  .privacy-retention-grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .privacy-retention-grid article {
+    max-width: 100%;
+
+    padding: 24px 18px;
+
+    justify-self: stretch;
+  }
+
+  .privacy-retention-marker {
+    display: none;
+  }
+
+}
 /* DIRITTI */
 
 .privacy-rights {
@@ -3310,3 +3418,278 @@ button,
   }
 
 }
+
+/* =========================================================
+   ILLUSTRAZIONE ANIMATA PRIMA DEL COUNTDOWN
+   Versione piccola, effetto logo
+========================================================= */
+
+.countdown-illustration {
+  position: relative;
+
+  width: 100%;
+  max-width: 560px;
+
+  margin: 0 auto;
+  padding: 4px 16px 0;
+
+  overflow: hidden;
+}
+
+
+/* CONTENITORE DELLE DUE IMMAGINI */
+
+.countdown-illustration-stage {
+  position: relative;
+
+  width: min(100%, 500px);
+  height: 470px;
+
+  margin: 0 auto;
+}
+
+
+/* CASTELLO */
+
+.countdown-castle {
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+
+  width: 470px;
+  max-width: 95%;
+  height: auto;
+
+  display: block;
+
+  opacity: 0;
+
+  transform:
+    translateX(calc(-50% - 120px))
+    scale(0.97);
+
+  transition:
+    transform 1.4s cubic-bezier(.22, .61, .36, 1),
+    opacity 1s ease;
+
+  pointer-events: none;
+  user-select: none;
+
+  z-index: 1;
+}
+
+
+/* COPPIA */
+
+.countdown-couple {
+  position: absolute;
+
+  left: 50%;
+  top: 118px;
+
+  width: 350px;
+  max-width: 70%;
+  height: auto;
+
+  display: block;
+
+  opacity: 0;
+
+  transform:
+    translateX(calc(-50% + 125px))
+    scale(0.97);
+
+  transition:
+    transform 1.4s cubic-bezier(.22, .61, .36, 1) 0.15s,
+    opacity 1s ease 0.15s;
+
+  pointer-events: none;
+  user-select: none;
+
+  z-index: 2;
+}
+
+
+/* POSIZIONE FINALE */
+
+.countdown-illustration.is-visible
+.countdown-castle {
+  opacity: 1;
+
+  transform:
+    translateX(-50%)
+    scale(1);
+}
+
+.countdown-illustration.is-visible
+.countdown-couple {
+  opacity: 1;
+
+  transform:
+    translateX(calc(-50% + 4px))
+    scale(1);
+}
+
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+
+  .countdown-illustration {
+    max-width: 490px;
+    padding: 4px 14px 0;
+  }
+
+  .countdown-illustration-stage {
+    width: min(100%, 430px);
+    height: 405px;
+  }
+
+  .countdown-castle {
+    width: 410px;
+    max-width: 95%;
+
+    transform:
+      translateX(calc(-50% - 105px))
+      scale(0.97);
+  }
+
+  .countdown-couple {
+    width: 305px;
+    max-width: 70%;
+    top: 103px;
+
+    transform:
+      translateX(calc(-50% + 110px))
+      scale(0.97);
+  }
+
+  .countdown-illustration.is-visible
+  .countdown-castle {
+    transform:
+      translateX(-50%)
+      scale(1);
+  }
+
+  .countdown-illustration.is-visible
+  .countdown-couple {
+    transform:
+      translateX(calc(-50% + 4px))
+      scale(1);
+  }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .countdown-illustration {
+    max-width: 330px;
+    padding: 2px 8px 0;
+  }
+
+  .countdown-illustration-stage {
+    width: 100%;
+    max-width: 290px;
+    height: 275px;
+  }
+
+  .countdown-castle {
+    width: 275px;
+    max-width: 95%;
+
+    transform:
+      translateX(calc(-50% - 70px))
+      scale(0.97);
+  }
+
+  .countdown-couple {
+    width: 205px;
+    max-width: 70%;
+    top: 68px;
+
+    transform:
+      translateX(calc(-50% + 75px))
+      scale(0.97);
+  }
+
+  .countdown-illustration.is-visible
+  .countdown-castle {
+    transform:
+      translateX(-50%)
+      scale(1);
+  }
+
+  .countdown-illustration.is-visible
+  .countdown-couple {
+    transform:
+      translateX(calc(-50% + 2px))
+      scale(1);
+  }
+
+}
+
+
+/* TELEFONI PICCOLI */
+
+@media (max-width: 480px) {
+
+  .countdown-illustration {
+    max-width: 285px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .countdown-illustration-stage {
+    max-width: 250px;
+    height: 238px;
+  }
+
+  .countdown-castle {
+    width: 238px;
+    max-width: 95%;
+  }
+
+  .countdown-couple {
+    width: 176px;
+    max-width: 70%;
+    top: 60px;
+  }
+
+  .countdown-illustration.is-visible
+  .countdown-couple {
+    transform:
+      translateX(calc(-50% + 2px))
+      scale(1);
+  }
+
+}
+
+
+/* ACCESSIBILITÀ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .countdown-castle,
+  .countdown-couple {
+    transition: none;
+    opacity: 1;
+  }
+
+  .countdown-castle {
+    transform:
+      translateX(-50%)
+      scale(1);
+  }
+
+  .countdown-couple {
+    transform:
+      translateX(calc(-50% + 4px))
+      scale(1);
+  }
+
+}
+

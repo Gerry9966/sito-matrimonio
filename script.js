@@ -64,9 +64,9 @@ setInterval(updateCountdown, 1000);
    RSVP - ELEMENTI
 ========================================================= */
 
-const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbzrx47WkIycLgebMJ--2BhfX74qLMrZhr7vZ0y2M6uGoNbsN8khuK316qX1RIKEljRl/exec";
-  
+const RSVP_API_URL =
+  "https://rsvp-matrimonio.gerardoaudino.workers.dev";
+
 const form = document.getElementById("rsvp-form");
 const message = document.getElementById("form-message");
 
@@ -189,6 +189,8 @@ function creaPartecipantiAggiuntivi(numeroTotale) {
 
     nome.required = true;
 
+    nome.maxLength = 100;
+
     participantBox.appendChild(nome);
 
 
@@ -204,6 +206,8 @@ function creaPartecipantiAggiuntivi(numeroTotale) {
 
     allergie.placeholder =
       "Allergie o esigenze alimentari";
+
+    allergie.maxLength = 500;
 
     participantBox.appendChild(allergie);
 
@@ -356,7 +360,7 @@ if (form && message) {
 
   form.addEventListener(
     "submit",
-    function (event) {
+    async function (event) {
 
       event.preventDefault();
 
@@ -367,57 +371,79 @@ if (form && message) {
         new FormData(form);
 
 
-      /*
-        ATTENZIONE:
+      try {
 
-        Per ora manteniamo l'invio esistente.
+        const response =
+          await fetch(
+            RSVP_API_URL,
+            {
+              method: "POST",
+              body: formData
+            }
+          );
 
-        Nel prossimo passaggio aggiorneremo
-        Google Apps Script affinché ogni
-        partecipante venga registrato in
-        una riga separata del Google Sheet.
-      */
 
-      fetch(
-        GOOGLE_SCRIPT_URL,
-        {
-          method: "POST",
-          mode: "no-cors",
-          body: formData
+        const result =
+          await response.json();
+
+
+        if (
+          !response.ok ||
+          !result.ok
+        ) {
+
+          throw new Error(
+            result.message ||
+            "Errore durante il salvataggio"
+          );
+
         }
-      );
 
 
-      message.innerText =
-        "Grazie! Conferma inviata.";
+        // =====================================================
+        // ARRIVIAMO QUI SOLO SE GOOGLE SHEETS HA SALVATO I DATI
+        // =====================================================
 
-      form.reset();
-
-
-      /* NASCONDE I CAMPI EXTRA */
-
-      if (extraFields) {
-
-        extraFields.classList.remove(
-          "show-fields"
-        );
-
-      }
+        message.innerText =
+          "Grazie! Conferma inviata.";
 
 
-      /* ELIMINA I PARTECIPANTI GENERATI */
+        form.reset();
 
-      if (partecipantiAggiuntivi) {
 
-        partecipantiAggiuntivi.innerHTML = "";
+        // NASCONDE I CAMPI EXTRA
 
-      }
+        if (extraFields) {
+
+          extraFields.classList.remove(
+            "show-fields"
+          );
+
+        }
+
+
+        // ELIMINA I PARTECIPANTI GENERATI
+
+        if (partecipantiAggiuntivi) {
+
+          partecipantiAggiuntivi.innerHTML = "";
+
+        }
+
+
+      } catch (error) {
+
+  console.error(error);
+
+  message.innerText =
+    "Errore: " + error.message;
+
+}
 
     }
   );
 
 }
-
 
 /* =========================================================
    APERTURA INVITO
@@ -631,6 +657,54 @@ if (
       }
 
     }
+  );
+
+}
+
+
+/* =========================================================
+   ANIMAZIONE ILLUSTRAZIONE COUNTDOWN
+========================================================= */
+
+const countdownIllustration =
+  document.querySelector(
+    ".countdown-illustration"
+  );
+
+
+if (countdownIllustration) {
+
+  const illustrationObserver =
+    new IntersectionObserver(
+      function (entries, observer) {
+
+        entries.forEach(
+          function (entry) {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add(
+                "is-visible"
+              );
+
+              observer.unobserve(
+                entry.target
+              );
+
+            }
+
+          }
+        );
+
+      },
+      {
+        threshold: 0.25
+      }
+    );
+
+
+  illustrationObserver.observe(
+    countdownIllustration
   );
 
 }

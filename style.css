@@ -398,6 +398,7 @@ h2{
 }
 
 .programma-icon-wrapper{
+  position:relative;
   width:126px;
   height:126px;
   margin:0 auto 28px;
@@ -413,6 +414,20 @@ h2{
   width:66px;
   height:66px;
   object-fit:contain;
+  transform:translateY(-10px);
+}
+
+.programma-date{
+  position:absolute;
+  left:50%;
+  bottom:14px;
+  transform:translateX(-50%);
+  color:#5a5551;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:1.4px;
+  line-height:1;
+  white-space:nowrap;
 }
 
 .programma-dot{
@@ -457,6 +472,64 @@ h2{
   margin:0 auto;
   font-size:16px;
   line-height:1.7;
+}
+
+/* CTA LOCATION NEL PROGRAMMA */
+
+.programma-location-cta{
+  margin:74px auto 62px;
+  text-align:center;
+}
+
+.programma-location-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+
+  padding:15px 30px;
+
+  background:#23412e;
+  color:#fff7e8;
+
+  text-decoration:none;
+  border:1px solid rgba(35,65,46,.14);
+  border-radius:999px;
+
+  font-size:16px;
+  line-height:1.2;
+
+  box-shadow:
+    0 12px 26px rgba(35,65,46,.18);
+
+  transition:
+    transform .25s ease,
+    background-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.programma-location-icon{
+  color:#d4af37;
+  font-size:18px;
+  line-height:1;
+}
+
+.programma-location-arrow{
+  color:#d4af37;
+  font-size:19px;
+  line-height:1;
+  transition:transform .25s ease;
+}
+
+.programma-location-button:hover{
+  background:#183021;
+  transform:translateY(-2px);
+  box-shadow:
+    0 16px 32px rgba(35,65,46,.24);
+}
+
+.programma-location-button:hover .programma-location-arrow{
+  transform:translateX(3px);
 }
 
 .programma-footer{
@@ -853,17 +926,20 @@ footer{
 }
 
 .locations-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 40px;
+
   max-width: 1180px;
   margin: 0 auto;
 }
 
 .venue-card {
+  width: min(100%, 680px);
   background: white;
   border-radius: 18px;
-  padding: 26px 26px 34px;
+  padding: 22px 22px 30px;
   text-align: center;
   box-shadow: 0 20px 60px rgba(80, 50, 30, .12);
   border: 1px solid rgba(196, 154, 84, .18);
@@ -871,9 +947,9 @@ footer{
 
 .venue-card img {
   width: 100%;
-  height: 310px;
+  height: 360px;
   object-fit: contain;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .venue-type {
@@ -1156,6 +1232,13 @@ button,
   .programma-icon{
     width:58px;
     height:58px;
+    transform:translateY(-9px);
+  }
+
+  .programma-date{
+    bottom:12px;
+    font-size:9px;
+    letter-spacing:1.1px;
   }
 
   .programma-time{
@@ -1165,6 +1248,24 @@ button,
   .programma-item h3{
     font-size:18px;
     letter-spacing:2.5px;
+  }
+
+  .programma-location-cta{
+    margin:56px auto 48px;
+  }
+
+  .programma-location-button{
+    padding:14px 24px;
+    font-size:15px;
+    gap:10px;
+  }
+
+  .programma-location-icon{
+    font-size:17px;
+  }
+
+  .programma-location-arrow{
+    font-size:18px;
   }
 
   .programma-footer-decoration{
